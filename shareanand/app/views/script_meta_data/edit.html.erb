@@ -1,0 +1,27 @@
+<h1>Editing Script Meta Datum</h1>
+<div class="form-group">
+	<%=form_for(@script_meta_datum) do |f| %>
+		<%= f.label :isi_num, raw("Script ISIN code")%>
+		<%= f.text_field :isi_num %>
+		<%= f.label :bse_script_numb, raw("BSE Script Number")%>
+		<%= f.text_field :bse_script_numb %>
+		<%= f.label :nse_script_name, raw("NSE Script name")%>
+		<%= f.text_field :nse_script_name %>
+		<%= f.label :money_control_script_name, raw("MoneyControl Script Name")%>
+		<%= f.text_field :money_control_script_name %>
+		<%= f.label :financial_page_link, raw("Financial Page Link")%>
+		<%= f.text_field :financial_page_link %>
+		<%= f.label :balance_sheet_link, raw("Balance Sheet Link")%>
+		<%= f.text_field :balance_sheet_link %>
+		<%= f.label :p_l_link, raw("Profit and Loss Link")%>
+		<%= f.text_field :p_l_link %>
+		<%= f.label :money_control_link, raw("MoneyControl Link")%>
+		<%= f.text_field :money_control_link %>
+		<%= f.label :industry, raw("Industry")%>
+		<%= f.text_field :industry %>
+		<%= f.submit "update", class: "btn btn-default btn-primary" %>
+	<% end %>
+</div>
+
+<%= link_to 'Show', @script_meta_datum %> |
+<%= link_to 'Back', script_meta_data_path %>

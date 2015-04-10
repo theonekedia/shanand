@@ -1,0 +1,17 @@
+<%= form_for(@script_meta_datum) do |f| %>
+  <% if @script_meta_datum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@script_meta_datum.errors.count, "error") %> prohibited this script_meta_datum from being saved:</h2>
+
+      <ul>
+      <% @script_meta_datum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
