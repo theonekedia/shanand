@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :day_tradings
+
   resources :profit_and_losses,	param: :nse_script_name
 
   resources :balance_sheets,   param: :nse_script_name

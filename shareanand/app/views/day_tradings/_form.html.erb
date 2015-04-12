@@ -1,0 +1,17 @@
+<%= form_for(@day_trading) do |f| %>
+  <% if @day_trading.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@day_trading.errors.count, "error") %> prohibited this day_trading from being saved:</h2>
+
+      <ul>
+      <% @day_trading.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

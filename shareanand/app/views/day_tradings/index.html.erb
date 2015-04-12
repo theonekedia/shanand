@@ -1,0 +1,62 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Day Tradings</h1>
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+          <th> Company Name </th>
+          <th> OPEN </th>
+          <th> HIGH </th>
+          <th> LOW </th>
+          <th> CLOSE </th>
+          <th> PREVIOUS CLOSE </th>
+          <th> % Change </th>
+          <th> Predictred High </th>
+          <th> Predictred Low </th>
+
+    </tr>
+  </thead>
+	
+
+  <tbody>
+    <% @day_tradings.each do |day_trading| %>
+      <tr>
+      	<td><%= day_trading.nse_script_name %></td>
+      	<td><%= day_trading.today_open %></td>
+      	<td><%= day_trading.today_high %></td>
+      	<td><%= day_trading.today_low %></td>
+      	<td><%= day_trading.today_close %></td>
+      	<td><%= day_trading.pre_day_close %></td>
+      	<td><%= day_trading.perc_change.round(2) %></td>
+      	<% if day_trading.today_close < day_trading.today_open %>
+			<% x= day_trading.today_close + day_trading.today_high + 2 * day_trading.today_low %>
+		
+		<td><%= x/2 - day_trading.today_low %></td>
+      	<td><%= x/2 - day_trading.today_high %></td>	
+			
+		<% elsif day_trading.today_close > day_trading.today_open %>
+			<% x= day_trading.today_close + 2 * day_trading.today_high + day_trading.today_low %>	
+		
+		<td><%= x/2 - day_trading.today_low %></td>
+      	<td><%= x/2 - day_trading.today_high %></td>	
+			
+      	<% elsif day_trading.today_close = day_trading.today_open %>
+			<% x= 2 * day_trading.today_close + day_trading.today_high + day_trading.today_low %>
+      	
+      	<td><%= x/2 - day_trading.today_low %></td>
+      	<td><%= x/2 - day_trading.today_high %></td>	
+		
+      	<% end %>
+      	
+        <td><%= link_to 'Show', day_trading %></td>
+        <td><%= link_to 'Edit', edit_day_trading_path(day_trading) %></td>
+        <td><%= link_to 'Destroy', day_trading, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Day trading', new_day_trading_path %>

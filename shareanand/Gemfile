@@ -18,6 +18,7 @@ gem 'omniauth-oauth2'
 gem 'omniauth-facebook'
 gem 'koala'
 gem 'omniauth-twitter'
+gem 'whenever'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier'
