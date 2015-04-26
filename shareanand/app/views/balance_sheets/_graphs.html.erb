@@ -1,0 +1,7 @@
+<img src="<%= Gchart.line(:size => '600x200', 
+			:title => "Current Assets",:bg => 'efefef',
+			:legend => ['Total Current Assets data'],
+			:bar_colors => '00FF00',
+			:axis_with_labels => ['x','y'],
+			:data => [@balance_sheet.tot_curr_assets_4, @balance_sheet.tot_curr_assets_3, @balance_sheet.tot_curr_assets_2, @balance_sheet.tot_curr_assets_1, @balance_sheet.tot_curr_assets_0])  %>" />
+

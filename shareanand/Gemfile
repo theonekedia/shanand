@@ -19,6 +19,7 @@ gem 'omniauth-facebook'
 gem 'koala'
 gem 'omniauth-twitter'
 gem 'whenever'
+gem "googlecharts", :require => "gchart"
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier'

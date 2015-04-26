@@ -83,6 +83,7 @@ GEM
       multipart-post (>= 1.2, < 3)
     globalid (0.3.3)
       activesupport (>= 4.1.0)
+    googlecharts (1.6.10)
     hashie (2.1.2)
     hike (1.2.3)
     http (0.6.3)
@@ -234,6 +235,7 @@ DEPENDENCIES
   coffee-rails
   debugger
   devise
+  googlecharts
   jbuilder
   jquery-rails
   json

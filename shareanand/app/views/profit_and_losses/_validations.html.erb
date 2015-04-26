@@ -1,0 +1,74 @@
+
+
+<h1> Fundamental Analysis based on Profit and Loss</h1>
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+	  <th> Company Name	</th>
+      <th> Gross Profit Margin 2014</th>
+      <th> Gross Profit Margin 2013</th>
+      <th> Gross Profit Margin 2012</th>
+      <th> Gross Profit Margin 2011</th>
+      <th> Gross Profit Margin 2010</th>
+    </tr>
+  </thead>
+<tbody>
+
+							<tr height="22px">
+							<td colspan="1" >Gross Profit Margin</td>
+	  <td><%= ((@profit_and_loss.net_sales_0 - @profit_and_loss.tot_exp_0 ) * 100 / @profit_and_loss.net_sales_0).round(2) %></td>
+      <td><%= ((@profit_and_loss.net_sales_1 - @profit_and_loss.tot_exp_1 ) * 100 / @profit_and_loss.net_sales_1).round(2) %></td>
+      <td><%= ((@profit_and_loss.net_sales_2 - @profit_and_loss.tot_exp_2 ) * 100 / @profit_and_loss.net_sales_2).round(2) %></td>
+      <td><%= ((@profit_and_loss.net_sales_3 - @profit_and_loss.tot_exp_3 ) * 100 / @profit_and_loss.net_sales_3).round(2) %></td>
+      <td><%= ((@profit_and_loss.net_sales_4 - @profit_and_loss.tot_exp_4 ) * 100 / @profit_and_loss.net_sales_4).round(2) %></td>
+						</tr>
+						
+						<tr height="22px">
+			<td colspan="1" >Selling and admin expenses </td>
+	  <td><%= @profit_and_loss.selling_admin_exp_0 %></td>
+	  <td><%= @profit_and_loss.selling_admin_exp_1 %></td>
+	  <td><%= @profit_and_loss.selling_admin_exp_2 %></td>
+	  <td><%= @profit_and_loss.selling_admin_exp_3 %></td>
+	  <td><%= @profit_and_loss.selling_admin_exp_4 %></td>
+      
+						</tr>
+      
+      <tr height="22px">
+			<td colspan="1" >Depreciation </td>
+	  <td><%= (@profit_and_loss.deprec_0 * 100 / (@profit_and_loss.net_sales_0 - @profit_and_loss.tot_exp_0 )).round(2) %></td>
+	  <td><%= (@profit_and_loss.deprec_1 * 100 / (@profit_and_loss.net_sales_1 - @profit_and_loss.tot_exp_1 )).round(2) %></td>
+	  <td><%= (@profit_and_loss.deprec_2 * 100 / (@profit_and_loss.net_sales_2 - @profit_and_loss.tot_exp_2 )).round(2) %></td>
+      <td><%= (@profit_and_loss.deprec_3 * 100 / (@profit_and_loss.net_sales_3 - @profit_and_loss.tot_exp_3 )).round(2) %></td>
+      <td><%= (@profit_and_loss.deprec_4 * 100 / (@profit_and_loss.net_sales_4 - @profit_and_loss.tot_exp_4 )).round(2) %></td>
+						</tr>
+						
+	<tr height="22px">
+			<td colspan="1" >Interest Paid </td>
+	  <td><%= (@profit_and_loss.interest_0 * 100 / (@profit_and_loss.net_sales_0 - @profit_and_loss.tot_exp_0 )).round(2) %></td>
+	  <td><%= (@profit_and_loss.interest_1 * 100 / (@profit_and_loss.net_sales_1 - @profit_and_loss.tot_exp_1 )).round(2) %></td>
+	  <td><%= (@profit_and_loss.interest_2 * 100 / (@profit_and_loss.net_sales_2 - @profit_and_loss.tot_exp_2 )).round(2) %></td>
+      <td><%= (@profit_and_loss.interest_3 * 100 / (@profit_and_loss.net_sales_3 - @profit_and_loss.tot_exp_3 )).round(2) %></td>
+      <td><%= (@profit_and_loss.interest_4 * 100 / (@profit_and_loss.net_sales_4 - @profit_and_loss.tot_exp_4 )).round(2) %></td>
+		</tr>
+		
+							<tr height="22px">
+							<td colspan="1" > Reported Net Profit from Revenue</td>
+	  <td><%= (@profit_and_loss.repo_net_prft_0 * 100 / @profit_and_loss.tot_income_0).round(2) %></td>
+	  <td><%= (@profit_and_loss.repo_net_prft_1 * 100 / @profit_and_loss.tot_income_1).round(2) %></td>
+	  <td><%= (@profit_and_loss.repo_net_prft_2 * 100 / @profit_and_loss.tot_income_2).round(2) %></td>
+	  <td><%= (@profit_and_loss.repo_net_prft_3 * 100 / @profit_and_loss.tot_income_3).round(2) %></td>
+	  <td><%= (@profit_and_loss.repo_net_prft_4 * 100 / @profit_and_loss.tot_income_4).round(2) %></td>
+	  </tr>
+		
+		<tr height="22px">
+			<td colspan="1" > Earnings per share (make chart instead) </td>
+	  <td><%= (@profit_and_loss.repo_net_prft_0 * 100 / @profit_and_loss.no_shares_issued_0).round(2) %></td>
+	  <td><%= (@profit_and_loss.repo_net_prft_1 * 100 / @profit_and_loss.no_shares_issued_1).round(2) %></td>
+	  <td><%= (@profit_and_loss.repo_net_prft_2 * 100 / @profit_and_loss.no_shares_issued_2).round(2) %></td>
+	  <td><%= (@profit_and_loss.repo_net_prft_3 * 100 / @profit_and_loss.no_shares_issued_3).round(2) %></td>
+	  <td><%= (@profit_and_loss.repo_net_prft_4 * 100 / @profit_and_loss.no_shares_issued_4).round(2) %></td>
+							
+</tbody>
+
+

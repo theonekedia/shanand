@@ -2,19 +2,21 @@
 
 <h1>Listing Profit And Losses</h1>
 
-<table>
+<table class="table table-striped table-bordered">
   <thead>
     <tr>
-      <th colspan="3"></th>
+	  <th> Company Name	</th>
     </tr>
   </thead>
 
   <tbody>
     <% @profit_and_losses.each do |profit_and_loss| %>
+		<% next if profit_and_loss.net_sales_0.nil? %>
       <tr>
-        <td><%= link_to 'Show', profit_and_loss %></td>
-        <td><%= link_to 'Edit', edit_profit_and_loss_path(profit_and_loss) %></td>
-        <td><%= link_to 'Destroy', profit_and_loss, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= profit_and_loss.nse_script_name %></td>
+      <td><%= link_to 'Show', profit_and_loss %></td>
+      <td><%= link_to 'Edit', edit_profit_and_loss_path(profit_and_loss) %></td>
+      <td><%= link_to 'Destroy', profit_and_loss, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
