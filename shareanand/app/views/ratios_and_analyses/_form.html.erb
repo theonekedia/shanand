@@ -1,0 +1,17 @@
+<%= form_for(@ratios_and_analysis) do |f| %>
+  <% if @ratios_and_analysis.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ratios_and_analysis.errors.count, "error") %> prohibited this ratios_and_analysis from being saved:</h2>
+
+      <ul>
+      <% @ratios_and_analysis.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

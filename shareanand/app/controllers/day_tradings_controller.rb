@@ -1,10 +1,11 @@
 class DayTradingsController < ApplicationController
   before_action :set_day_trading, only: [:show, :edit, :update, :destroy]
+    helper_method :sort_column, :sort_direction
 
   # GET /day_tradings
   # GET /day_tradings.json
   def index
-    @day_tradings = DayTrading.all
+    @day_tradings = DayTrading.order(sort_column + " " + sort_direction)
   end
 
   # GET /day_tradings/1
@@ -71,4 +72,11 @@ class DayTradingsController < ApplicationController
     def day_trading_params
       params[:day_trading]
     end
+     def sort_column
+    DayTrading.column_names.include?(params[:sort]) ? params[:sort] : "nse_script_name"
+  end
+  
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
 end

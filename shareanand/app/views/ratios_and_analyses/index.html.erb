@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Ratios And Analyses </h1>  <h6>in Percentages</h6>
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+		<th> <%= sortable "Company Name" %>	</th>
+		<th> <%= sortable "industry" %> </th>
+		<th> <%= sortable("gross_profit_margin_0", "Gross Profit Margin (%)") %> </th>
+		<th> <%= sortable("oper_profit_margn_0","Operating profit Margin (%)") %> </th>
+		<th> <%= sortable("net_proft_margn_0","Net Profit Margin (%)") %> </th>
+		<th> <%= sortable("eps_0","Earnings Per Share") %> </th>
+		<th> <%= sortable("interest_paid_0","Interest") %> </th>
+		<th> <%= sortable("return_on_asset_0","Return On Assets (%)") %> </th>
+		<th> <%= sortable("return_on_equity_0","Return On Equity (in multiples)") %> </th>
+		<th> <%= sortable("debt_Ratio_0","Debt Ratio(%)") %> </th>
+		<th> <%= sortable("current_ratio_0","Current Ratio") %> </th>
+		<th> <%= sortable("debt_equity_ratio_0","Debt Equity Ratio") %> </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ratios_and_analyses.each do |ratios_and_analysis| %>
+      <tr>
+		<td><%= link_to ratios_and_analysis.nse_script_name, ratios_and_analysis%></td>
+		<td><%= ratios_and_analysis.industry %></td>
+		<td><%= ratios_and_analysis.gross_profit_margin_0.round(2) %></td>
+		<td><%= ratios_and_analysis.oper_profit_margn_0.round(2) %></td>
+		<td><%= ratios_and_analysis.net_proft_margn_0.round(2) %></td>
+		<td><%= ratios_and_analysis.eps_0.round(2) %></td>
+		<td><%= ratios_and_analysis.interest_paid_0.round(2) %></td>
+		
+		<td><%= ratios_and_analysis.return_on_asset_0.round(2) %></td>
+		<td><%= ratios_and_analysis.return_on_equity_0.round(2) %></td>
+		<td><%= (ratios_and_analysis.debt_Ratio_0 * 100).round(2) %></td>
+		<td><%= ratios_and_analysis.current_ratio_0.round(2) %></td>
+		<td><%= ratios_and_analysis.debt_equity_ratio_0.round(2) %></td>   
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
