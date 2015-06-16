@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  
+  devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
+  #resources :users
+  match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
+  
   resources :ratios_and_analyses,	param: :nse_script_name
 
   resources :day_tradings,	param: :nse_script_name

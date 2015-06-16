@@ -10,6 +10,7 @@ class BalanceSheetsController < ApplicationController
   # GET /balance_sheets/1
   # GET /balance_sheets/1.json
   def show
+  @balance_sheet = BalanceSheet.find_by_nse_script_name(params[:nse_script_name])
   end
 
   # GET /balance_sheets/new

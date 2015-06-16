@@ -1,0 +1,29 @@
+<%= form_for @user do |f| %>
+  
+
+  <div class="form-inputs">
+    <%= f.label :name, :required => true, :autofocus => true %>
+    <%= f.label :about, :required => true %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+<div>
+Connect Account
+
+
+
+<% ['facebook', 'twitter', 'github', 'linkedin', 'google_oauth2'].each do |provider| %>
+
+  <% if current_user.identities.pluck(:provider).include?(provider.to_s) %>
+    <%= provider.to_s.titleize %> Connected
+  <% else %>
+      <%= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path('user', provider) %>
+  <% end %>
+<br/>
+<% end %>
+
+</div>

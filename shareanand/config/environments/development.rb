@@ -33,6 +33,17 @@ Rails.application.configure do
 
   # Adds additional error checking when serving assets at runtime.
   # Checks for improperly declared sprockets dependencies.
+   config.action_mailer.default_url_options = { host: "http://localhost:3000/" }
+  #config.action_mailer.default_url_options = { :host => "shareanand.com" }
+  #config.action_mailer.smtp_settings = {
+  #  address: 'smtp.gmail.com', 
+  #  port: '587',
+  #  enable_starttls_auto: true,
+  #  user_name: 'someuser',
+  #  password: 'somepass',
+  #  authentication: :plain,
+  #  domain: 'somedomain.com'
+  #  }
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
 
