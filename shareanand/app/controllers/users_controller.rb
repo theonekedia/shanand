@@ -1,22 +1,24 @@
 class UsersController < ApplicationController
-#  before_action :set_user, only: [:show, :edit, :update, :destroy,:finish_signup]
+  before_action :set_user, only: [:show, :edit, :update, :destroy,:finish_signup]
   before_filter :set_user, only: [:show, :edit, :update]
   before_filter :validate_authorization_for_user, only: [:edit, :update]
-
+  before_filter :authenticate_user!
 
   # GET /users/:id.:format
   def show
-     authorize! :read, @user
+     #authorize! :read, 
+     @user=User.find(params[:id])
   end
 
   # GET /users/:id/edit
-  def edit
-     authorize! :update, @user
-  end
+  #def edit
+  #   authorize! :update, @user
+  #end
 
   # PATCH/PUT /users/:id.:format
   def update
     # authorize! :update, @user
+    @user = User.find(params[:id])
     respond_to do |format|
       if @user.update_attributes(user_params)
         sign_in(@user == current_user ? @user : current_user, :bypass => true)
@@ -32,11 +34,12 @@ class UsersController < ApplicationController
   # GET/PATCH /users/:id/finish_signup
   def finish_signup
     # authorize! :update, @user 
+    @user = User.find(params[:id])
     if request.patch? && params[:user] #&& params[:user][:email]
       if @user.update_attributes(user_params)
-        @user.skip_reconfirmation!  #comment to force the user to confirm their email address
+        #@user.skip_reconfirmation!  #comment to force the user to confirm their email address
         sign_in(@user, :bypass => true)
-        redirect_to @user, notice: 'Your profile was successfully updated.'
+        redirect_to user_path, notice: 'Your profile was successfully updated.'
       else
         @show_errors = true
       end
@@ -59,7 +62,7 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      accessible = [ :name, :email ] # extend with your own params
+      accessible = [ :id, :name, :email ] # extend with your own params
       accessible << [ :password, :password_confirmation ] unless params[:user][:password].blank?
       params.require(:user).permit(accessible)
     end

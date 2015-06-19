@@ -1,0 +1,33 @@
+<header>
+<nav class="navbar navbar-default" role="navigation">	
+<div class="navbar-header">
+	<div class="navbar-brand">
+<%= link_to "ShareAnand", root_path %>
+	</div>
+	<ul class="nav navbar-nav navbar-right">
+		<li><%= link_to "Today's Trading Details and Pivot Table", day_tradings_path %></li>
+		<li><%= link_to "Ratios", ratios_and_analyses_path %></li>
+		<li><%= link_to "Articles", '#' %></li>
+		<li><%= link_to "Economic Calender", '#' %></li>
+
+	<% if signed_in? %>
+		<li><%= link_to "Users", '#' %></li>
+		<li class="dropdown">
+	<a class="dropdown-toggle" data-toggle="dropdown" href="#">Account <span class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<li><%= link_to "Profile", current_user %></li>
+				<li><%= link_to "Settings", '#' %></li>
+				<li class="divider"></li>
+				<li><%= link_to "Sign out", destroy_user_session_path, method: "delete" %></li>
+			</ul>
+		</li>
+	<% else %>
+		<li><%= link_to "Sign in", new_user_session_path %></li>
+		<li><%= link_to "Register", user_session_path %></li>
+	<% end %>
+	</ul>
+</div>
+</nav>
+
+
+</header>

@@ -61,31 +61,13 @@ class User < ActiveRecord::Base
 
     def self.find_for_oauth(auth, signed_in_resource = nil)
 
-    data = auth.info
     # Get the identity and user if they exist
     identity = Identity.find_for_oauth(auth)
 
-    user = User.where(:provider => auth.provider, :uid => auth.uid ).first
-    if user
-      return user
-    else
-      registered_user = User.where(:email => auth.info.email).first
-      if registered_user
-        return registered_user
-      else
-        user = User.create(name: data["name"],
-          provider:auth.provider,
-          email: data["email"],
-          uid: auth.uid ,
-          password: Devise.friendly_token[0,20],
-        )
-      end
-   end
     # If a signed_in_resource is provided it always overrides the existing user
     # to prevent the identity being locked with accidentally created accounts.
     # Note that this may leave zombie accounts (with no associated identity) which
     # can be cleaned up at a later date.
-=begin    
     user = signed_in_resource ? signed_in_resource : identity.user
 
     # Create the user if needed
@@ -110,7 +92,7 @@ class User < ActiveRecord::Base
         user.save!
       end
     end
-=end
+
     # Associate the identity with the user if needed
     if identity.user != user
       identity.user = user
@@ -123,7 +105,7 @@ class User < ActiveRecord::Base
     self.email && self.email !~ TEMP_EMAIL_REGEX
   end
 end
-=begin
+
 def self.find_for_google_oauth2(access_token, signed_in_resource=nil)
     data = access_token.info
     user = User.where(:provider => access_token.provider, :uid => access_token.uid ).first
@@ -143,4 +125,3 @@ def self.find_for_google_oauth2(access_token, signed_in_resource=nil)
       end
    end
 end
-=end

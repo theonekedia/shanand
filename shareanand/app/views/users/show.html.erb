@@ -1,11 +1,43 @@
-<!DOCTYPE html>
-<html>
-<p id="notice"><%= notice %></p>
+<% provide(:title, @user) %>
+<h3>User Details </h3>
+<div class="row">
+	<div class="col-md-6">
+<aside class="span4">
+<section>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+	<p>User: <%= @user.name %></p>
+	<p>email: <%= @user.email %></p>
+	<p>ID: <%= @user.uid %></p>
+	<p>Sign in Count: <%= @user.sign_in_count %></p>
+    <p>Current Signed in Time: <%= @user.current_sign_in_at %></p>
+    <p>Last Signed in Time: <%= @user.last_sign_in_at %></p>
+    <p>Current Signed in IP: <%= @user.current_sign_in_ip %></p>
+    <p>Current Signed in IP: <%= @user.last_sign_in_ip %></p>
+    <p>Confirmed Time: <%= @user.confirmed_at %></p>
+    <p>Confirmation Mail Sent Time: <%= @user.confirmation_sent_at %></p>
+    <p>Unconfirmed eMail : <%= @user.unconfirmed_email %></p>
+    <p>Failed Attempts: <%= @user.failed_attempts %></p>
+    <p>Registered Time: <%= @user.created_at %></p>
+    <p>Last Updated Time: <%= @user.updated_at %></p>
+</div>
 
-<%= link_to 'Edit', edit_user_path(@user) %>
-</html>
+<div class="col-md-6">
+
+ 	<p>Provider: <%= @user.provider %></p>
+   	<p>UID: <%= @user.uid %></p>
+    <p>Gender: <%= @user.gender %></p>
+    <p>Occupation: <%= @user.occupation %></p>
+    <p>Income Group: <%= @user.income_Group %></p>
+    <p>Investment share: <%= @user.investment_in_shares %></p>
+    <p>Age: <%= @user.age %></p>
+    <p>Expertize Level: <%= @user.expertize_level %></p>
+    <p>Mobile Number: <%= @user.mobile_number %></p>
+    <p>DOB: <%= @user.date_of_birth %></p>
+    <p>Hoem Town: <%= @user.hometown %></p>
+    <p>Time Zone: <%= @user.current_timezone %></p>
+    <p>Profile Picture: <%= @user.picture %></p>
+
+</div>
+</section>
+</aside>
+</div>

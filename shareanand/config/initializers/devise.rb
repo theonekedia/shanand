@@ -10,7 +10,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'mailfromshareanand@shareanand.com'
+  config.mailer_sender = 'mail2shareanand@gmail.com'
 
   # Configure the class responsible to send e-mails.
   config.mailer = 'Devise::Mailer'
@@ -31,11 +31,11 @@ Devise.setup do |config|
   # or not authentication should be aborted when the value is not present.
   # config.authentication_keys = [ :email ]
 
-  #config.omniauth :facebook, "KEY", "SECRET"
+  config.omniauth :facebook, "1460789050899765", "f57e59a989a5a4bd91f70a134fe6eb3f"
   #config.omniauth :twitter, "KEY", "SECRET"
-  #config.omniauth :linked_in, "KEY", "SECRET"
+  config.omniauth :linkedin, "KEY", "SECRET"
   #config.omniauth :twitter, "3XDRzqrXnDWVmNsfxtp4I68X2", "mSJG5zW6cJbs1E8cfpFPU7HdThCFzFipzJguApuF61pHHBJnvQ", { :scope => 'r_fullprofile, r_emailaddress', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
-  #config.omniauth :twitter, "TWITTER_KEY", "TWITTER_SECRET"
+  config.omniauth :google_oauth2, "274174770048-va2bhlk6t1q07dbtnsa8p1khehsdhqmb.apps.googleusercontent.com", "GNTS0dBVFrPMYRjLc677X0DX", {:client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
   config.omniauth :twitter, "w8rxooNFNOcK7J4m33pujUDtU", "jnQTxuoH6rPTBUU2AXSKJdDNuD9JgyJiKAq9MUxiTsrgpasWJv", { :scope => 'r_fullprofile, r_emailaddress', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
   
   # Configure parameters from the request object used for authentication. Each entry

@@ -19,3 +19,5 @@
 
 #ignore bhavcopies
 /content/*
+/config/facebook.yml
+#/config/google.yml

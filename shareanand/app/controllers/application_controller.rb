@@ -17,6 +17,10 @@ class ApplicationController < ActionController::Base
       redirect_to finish_signup_path(current_user)
     end
   end
+
+  def after_sign_up_path_for(user)
+    # DO SOMETHING.
+  end
   
   def current_user
     return unless session[:user_id]
