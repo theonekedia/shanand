@@ -31,12 +31,14 @@ Devise.setup do |config|
   # or not authentication should be aborted when the value is not present.
   # config.authentication_keys = [ :email ]
 
-  config.omniauth :facebook, "1460789050899765", "f57e59a989a5a4bd91f70a134fe6eb3f"
-  #config.omniauth :twitter, "KEY", "SECRET"
-  config.omniauth :linkedin, "KEY", "SECRET"
-  #config.omniauth :twitter, "3XDRzqrXnDWVmNsfxtp4I68X2", "mSJG5zW6cJbs1E8cfpFPU7HdThCFzFipzJguApuF61pHHBJnvQ", { :scope => 'r_fullprofile, r_emailaddress', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
   config.omniauth :google_oauth2, "274174770048-va2bhlk6t1q07dbtnsa8p1khehsdhqmb.apps.googleusercontent.com", "GNTS0dBVFrPMYRjLc677X0DX", {:client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
+  config.omniauth :facebook, "1460789050899765", "f57e59a989a5a4bd91f70a134fe6eb3f"
+  # for twitter, using the twitterextend's Api secret
   config.omniauth :twitter, "w8rxooNFNOcK7J4m33pujUDtU", "jnQTxuoH6rPTBUU2AXSKJdDNuD9JgyJiKAq9MUxiTsrgpasWJv", { :scope => 'r_fullprofile, r_emailaddress', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
+  config.omniauth :linkedin, "75ttm657l94dr6", "Jw7xJjNLXGVIzm9k"
+  #config.omniauth :twitter, "3XDRzqrXnDWVmNsfxtp4I68X2", "mSJG5zW6cJbs1E8cfpFPU7HdThCFzFipzJguApuF61pHHBJnvQ", { :scope => 'r_fullprofile, r_emailaddress', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
+  
+
   
   # Configure parameters from the request object used for authentication. Each entry
   # given should be a request method and it will automatically be passed to the

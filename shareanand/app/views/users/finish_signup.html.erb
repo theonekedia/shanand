@@ -1,5 +1,6 @@
+<% if @user.provider == :twitter %>
 <div id="add-email" class="container">
-  <h1>Add Email</h1>
+  <h3>Confirm Your Email</h3>
   <%= form_for(@user, :as => 'user', :url => finish_signup_path(@user), :html => { role: 'form'}) do |f| %>
     <% if @show_errors && current_user.errors.any? %>
       <div id="error_explanation">
@@ -20,3 +21,4 @@
     </div>
   <% end %>
 </div>
+  <% end %>

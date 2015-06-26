@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150617212717) do
+ActiveRecord::Schema.define(version: 20150626132006) do
 
   create_table "balance_sheets", force: :cascade do |t|
     t.string   "industry"
@@ -196,6 +196,9 @@ ActiveRecord::Schema.define(version: 20150617212717) do
     t.datetime "created_at",                                 null: false
     t.datetime "updated_at",                                 null: false
     t.decimal  "today_low",         precision: 10, scale: 2
+    t.decimal  "graham_fvp",        precision: 10, scale: 2
+    t.decimal  "eps",               precision: 10, scale: 2
+    t.decimal  "book_value",        precision: 10, scale: 2
   end
 
   add_index "day_tradings", ["nse_script_name"], name: "index_day_tradings_on_nse_script_name"
@@ -467,6 +470,9 @@ ActiveRecord::Schema.define(version: 20150617212717) do
     t.string   "industry"
     t.datetime "created_at",                                         null: false
     t.datetime "updated_at",                                         null: false
+    t.decimal  "graham_fvp",                precision: 10, scale: 2
+    t.decimal  "eps",                       precision: 10, scale: 2
+    t.decimal  "book_value",                precision: 10, scale: 2
   end
 
   add_index "script_meta_data", ["bse_script_numb"], name: "index_script_meta_data_on_bse_script_numb"

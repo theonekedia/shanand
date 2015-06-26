@@ -5,7 +5,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
         @user = User.find_for_oauth(env["omniauth.auth"], current_user)
 
         if @user.persisted?
-          sign_in_and_redirect @user, event: :authentication
+          sign_in_and_redirect @user
           set_flash_message(:notice, :success, kind: "#{provider}".capitalize) if is_navigational_format?
         else
           session["devise.#{provider}_data"] = env["omniauth.auth"]
@@ -15,7 +15,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     }
   end
 
-  [:twitter, :facebook, :linked_in, :google_oauth2].each do |provider|
+  [:google_oauth2,:facebook,:twitter,:linkedin].each do |provider|
     provides_callback_for provider
   end
 

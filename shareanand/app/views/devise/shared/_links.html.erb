@@ -1,3 +1,4 @@
+<div class="col-md-4">	
 <%- if controller_name != 'sessions' %>
   <%= link_to "Log in", new_session_path(resource_name) %><br />
 <% end -%>
@@ -17,9 +18,21 @@
 <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
   <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
 <% end -%>
-
+</div>
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider) %><br />
+<div class="col-md-4">
+  <% if provider == :google_oauth2 -%>
+  <%= link_to image_tag('google.png'), omniauth_authorize_path(resource_name, provider) %><br />	
+  <%- elsif provider == :facebook %>
+  <%= link_to image_tag('facebook.png'), omniauth_authorize_path(resource_name, provider) %><br />
+</div>
+<div class="col-md-4">	
+	<% elsif provider == :twitter -%>
+	<%= link_to image_tag('twitter.png'), omniauth_authorize_path(resource_name, provider) %><br />
+	<% elsif provider == :linkedin -%>
+	<%= link_to image_tag('linkedin.png'), omniauth_authorize_path(resource_name, provider) %><br />
   <% end -%>
+</div>      
+    <% end -%>
 <% end -%>

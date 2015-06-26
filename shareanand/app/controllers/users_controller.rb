@@ -10,10 +10,15 @@ class UsersController < ApplicationController
      @user=User.find(params[:id])
   end
 
+#def index
+     #authorize! :read, 
+ #    @user=User.all
+ # end
   # GET /users/:id/edit
-  #def edit
-  #   authorize! :update, @user
-  #end
+  def edit
+     authorize! :update
+     @user=User.find(params[:id])
+  end
 
   # PATCH/PUT /users/:id.:format
   def update
@@ -37,7 +42,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if request.patch? && params[:user] #&& params[:user][:email]
       if @user.update_attributes(user_params)
-        #@user.skip_reconfirmation!  #comment to force the user to confirm their email address
+        @user.skip_reconfirmation!  #comment to force the user to confirm their email address
         sign_in(@user, :bypass => true)
         redirect_to user_path, notice: 'Your profile was successfully updated.'
       else
