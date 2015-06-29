@@ -1,3 +1,4 @@
+# This program is to update on Daily basis.
 require 'csv'
 csv_file='/home/sradhu/MyProject/Source_code/shareanand/content/nse_bhav_copy/2015/April/CSV/cm10APR2015bhav.csv'
 
@@ -35,6 +36,8 @@ daytrading.today_close =arra[5].to_f
 daytrading.pre_day_close =arra[7].to_f	 
 daytrading.tot_shares_traded =arra[8].to_f
 daytrading.perc_change = (arra[5].to_f - arra[7].to_f) * 100 / arra[7].to_f
+
+#daytrading.market_cap = number of shares * arra[5].to_f
 
 daytrading.save
 fil.puts "#{symb} data is loaded into day_tradings table"

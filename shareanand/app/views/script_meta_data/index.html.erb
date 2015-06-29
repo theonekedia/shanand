@@ -10,6 +10,11 @@
       <th> INDUSTRY </th>
       <th> 52 Week Low </th>
       <th> 52 Week High </th>
+      <th> Number of Shares </th>
+      <th> Graham Fair Value Price </th>
+      <th> Book Value </th>
+      <th> EPS </th>
+      <th> NSE Table Name </th>
     </tr>
   </thead>
 
@@ -22,10 +27,14 @@
 		<td><%= script_meta_datum.industry %></td>
 		<td><%= script_meta_datum.f2_week_low.round(2) %></td>
 		<td><%= script_meta_datum.f2_week_high.round(2) %></td>
-		      
-        <td><%= link_to 'Show', script_meta_datum %></td>
-        <td><%= link_to 'Edit', edit_script_meta_datum_path(script_meta_datum) %></td>
-        <td><%= link_to 'Destroy', script_meta_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= script_meta_datum.number_of_shares %></td>
+    <td><%= script_meta_datum.graham_fvp %></td>
+    <td><%= script_meta_datum.book_value %></td>
+    <td><%= script_meta_datum.eps %></td>
+    <td><%= script_meta_datum.nse_hist_tbl_name %></td>
+		<td><%= link_to 'Show', script_meta_datum %></td>
+    <td><%= link_to 'Edit', edit_script_meta_datum_path(script_meta_datum) %></td>
+    <td><%= link_to 'Destroy', script_meta_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

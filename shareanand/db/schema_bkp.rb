@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150628124651) do
+ActiveRecord::Schema.define(version: 20150627182249) do
 
   create_table "balance_sheets", force: :cascade do |t|
     t.string   "industry"
@@ -200,7 +200,7 @@ ActiveRecord::Schema.define(version: 20150628124651) do
     t.decimal  "eps",                    precision: 10, scale: 2
     t.decimal  "book_value",             precision: 10, scale: 2
     t.decimal  "market_cap",             precision: 10, scale: 2
-    t.decimal  "tot_outstanding_shares", precision: 10, scale: 2
+    t.integer  "tot_outstanding_shares"
     t.decimal  "pe_ratio",               precision: 10, scale: 2
   end
 
@@ -394,80 +394,65 @@ ActiveRecord::Schema.define(version: 20150628124651) do
 
   create_table "ratios_and_analyses", force: :cascade do |t|
     t.string   "industry"
-    t.string   "isi_num",                                                null: false
-    t.string   "nse_script_name",                                        null: false
-    t.datetime "created_at",                                             null: false
-    t.datetime "updated_at",                                             null: false
-    t.decimal  "gross_profit_margin_0",         precision: 10, scale: 2
-    t.decimal  "gross_profit_margin_1",         precision: 10, scale: 2
-    t.decimal  "gross_profit_margin_2",         precision: 10, scale: 2
-    t.decimal  "gross_profit_margin_3",         precision: 10, scale: 2
-    t.decimal  "gross_profit_margin_4",         precision: 10, scale: 2
-    t.decimal  "oper_profit_margn_0",           precision: 10, scale: 2
-    t.decimal  "oper_profit_margn_1",           precision: 10, scale: 2
-    t.decimal  "oper_profit_margn_2",           precision: 10, scale: 2
-    t.decimal  "oper_profit_margn_3",           precision: 10, scale: 2
-    t.decimal  "oper_profit_margn_4",           precision: 10, scale: 2
-    t.decimal  "net_proft_margn_0",             precision: 10, scale: 2
-    t.decimal  "net_proft_margn_1",             precision: 10, scale: 2
-    t.decimal  "net_proft_margn_2",             precision: 10, scale: 2
-    t.decimal  "net_proft_margn_3",             precision: 10, scale: 2
-    t.decimal  "net_proft_margn_4",             precision: 10, scale: 2
-    t.decimal  "eps_0",                         precision: 10, scale: 2
-    t.decimal  "eps_1",                         precision: 10, scale: 2
-    t.decimal  "eps_2",                         precision: 10, scale: 2
-    t.decimal  "eps_3",                         precision: 10, scale: 2
-    t.decimal  "eps_4",                         precision: 10, scale: 2
-    t.decimal  "fixed_charge_coverage_ratio_0", precision: 10, scale: 2
-    t.decimal  "fixed_charge_coverage_ratio_1", precision: 10, scale: 2
-    t.decimal  "fixed_charge_coverage_ratio_2", precision: 10, scale: 2
-    t.decimal  "fixed_charge_coverage_ratio_3", precision: 10, scale: 2
-    t.decimal  "fixed_charge_coverage_ratio_4", precision: 10, scale: 2
-    t.decimal  "interest_coverage_ratio_0",     precision: 10, scale: 2
-    t.decimal  "interest_coverage_ratio_1",     precision: 10, scale: 2
-    t.decimal  "interest_coverage_ratio_2",     precision: 10, scale: 2
-    t.decimal  "interest_coverage_ratio_3",     precision: 10, scale: 2
-    t.decimal  "interest_coverage_ratio_4",     precision: 10, scale: 2
-    t.decimal  "return_on_asset_0",             precision: 10, scale: 2
-    t.decimal  "return_on_asset_1",             precision: 10, scale: 2
-    t.decimal  "return_on_asset_2",             precision: 10, scale: 2
-    t.decimal  "return_on_asset_3",             precision: 10, scale: 2
-    t.decimal  "return_on_asset_4",             precision: 10, scale: 2
-    t.decimal  "return_on_equity_0",            precision: 10, scale: 2
-    t.decimal  "return_on_equity_1",            precision: 10, scale: 2
-    t.decimal  "return_on_equity_2",            precision: 10, scale: 2
-    t.decimal  "return_on_equity_3",            precision: 10, scale: 2
-    t.decimal  "return_on_equity_4",            precision: 10, scale: 2
-    t.decimal  "debt_Ratio_0",                  precision: 10, scale: 2
-    t.decimal  "debt_Ratio_1",                  precision: 10, scale: 2
-    t.decimal  "debt_Ratio_2",                  precision: 10, scale: 2
-    t.decimal  "debt_Ratio_3",                  precision: 10, scale: 2
-    t.decimal  "debt_Ratio_4",                  precision: 10, scale: 2
-    t.decimal  "current_ratio_0",               precision: 10, scale: 2
-    t.decimal  "current_ratio_1",               precision: 10, scale: 2
-    t.decimal  "current_ratio_2",               precision: 10, scale: 2
-    t.decimal  "current_ratio_3",               precision: 10, scale: 2
-    t.decimal  "current_ratio_4",               precision: 10, scale: 2
-    t.decimal  "debt_equity_ratio_0",           precision: 10, scale: 2
-    t.decimal  "debt_equity_ratio_1",           precision: 10, scale: 2
-    t.decimal  "debt_equity_ratio_2",           precision: 10, scale: 2
-    t.decimal  "debt_equity_ratio_3",           precision: 10, scale: 2
-    t.decimal  "debt_equity_ratio_4",           precision: 10, scale: 2
-    t.decimal  "return_on_capital_employed_0",  precision: 10, scale: 2
-    t.decimal  "return_on_capital_employed_1",  precision: 10, scale: 2
-    t.decimal  "return_on_capital_employed_2",  precision: 10, scale: 2
-    t.decimal  "return_on_capital_employed_3",  precision: 10, scale: 2
-    t.decimal  "return_on_capital_employed_4",  precision: 10, scale: 2
-    t.decimal  "return_on_networth_0",          precision: 10, scale: 2
-    t.decimal  "return_on_networth_1",          precision: 10, scale: 2
-    t.decimal  "return_on_networth_2",          precision: 10, scale: 2
-    t.decimal  "return_on_networth_3",          precision: 10, scale: 2
-    t.decimal  "return_on_networth_4",          precision: 10, scale: 2
-    t.decimal  "assets_turnover_ratio_0",       precision: 10, scale: 2
-    t.decimal  "assets_turnover_ratio_1",       precision: 10, scale: 2
-    t.decimal  "assets_turnover_ratio_2",       precision: 10, scale: 2
-    t.decimal  "assets_turnover_ratio_3",       precision: 10, scale: 2
-    t.decimal  "assets_turnover_ratio_4",       precision: 10, scale: 2
+    t.string   "isi_num",                                            null: false
+    t.string   "nse_script_name",                                    null: false
+    t.datetime "created_at",                                         null: false
+    t.datetime "updated_at",                                         null: false
+    t.decimal  "gross_profit_margin_0",     precision: 10, scale: 2
+    t.decimal  "gross_profit_margin_1",     precision: 10, scale: 2
+    t.decimal  "gross_profit_margin_2",     precision: 10, scale: 2
+    t.decimal  "gross_profit_margin_3",     precision: 10, scale: 2
+    t.decimal  "gross_profit_margin_4",     precision: 10, scale: 2
+    t.decimal  "oper_profit_margn_0",       precision: 10, scale: 2
+    t.decimal  "oper_profit_margn_1",       precision: 10, scale: 2
+    t.decimal  "oper_profit_margn_2",       precision: 10, scale: 2
+    t.decimal  "oper_profit_margn_3",       precision: 10, scale: 2
+    t.decimal  "oper_profit_margn_4",       precision: 10, scale: 2
+    t.decimal  "net_proft_margn_0",         precision: 10, scale: 2
+    t.decimal  "net_proft_margn_1",         precision: 10, scale: 2
+    t.decimal  "net_proft_margn_2",         precision: 10, scale: 2
+    t.decimal  "net_proft_margn_3",         precision: 10, scale: 2
+    t.decimal  "net_proft_margn_4",         precision: 10, scale: 2
+    t.decimal  "eps_0",                     precision: 10, scale: 2
+    t.decimal  "eps_1",                     precision: 10, scale: 2
+    t.decimal  "eps_2",                     precision: 10, scale: 2
+    t.decimal  "eps_3",                     precision: 10, scale: 2
+    t.decimal  "eps_4",                     precision: 10, scale: 2
+    t.decimal  "interest_paid_0",           precision: 10, scale: 2
+    t.decimal  "interest_paid_1",           precision: 10, scale: 2
+    t.decimal  "interest_paid_2",           precision: 10, scale: 2
+    t.decimal  "interest_paid_3",           precision: 10, scale: 2
+    t.decimal  "interest_paid_4",           precision: 10, scale: 2
+    t.decimal  "interest_coverage_ratio_0", precision: 10, scale: 2
+    t.decimal  "interest_coverage_ratio_1", precision: 10, scale: 2
+    t.decimal  "interest_coverage_ratio_2", precision: 10, scale: 2
+    t.decimal  "interest_coverage_ratio_3", precision: 10, scale: 2
+    t.decimal  "interest_coverage_ratio_4", precision: 10, scale: 2
+    t.decimal  "return_on_asset_0",         precision: 10, scale: 2
+    t.decimal  "return_on_asset_1",         precision: 10, scale: 2
+    t.decimal  "return_on_asset_2",         precision: 10, scale: 2
+    t.decimal  "return_on_asset_3",         precision: 10, scale: 2
+    t.decimal  "return_on_asset_4",         precision: 10, scale: 2
+    t.decimal  "return_on_equity_0",        precision: 10, scale: 2
+    t.decimal  "return_on_equity_1",        precision: 10, scale: 2
+    t.decimal  "return_on_equity_2",        precision: 10, scale: 2
+    t.decimal  "return_on_equity_3",        precision: 10, scale: 2
+    t.decimal  "return_on_equity_4",        precision: 10, scale: 2
+    t.decimal  "debt_Ratio_0",              precision: 10, scale: 2
+    t.decimal  "debt_Ratio_1",              precision: 10, scale: 2
+    t.decimal  "debt_Ratio_2",              precision: 10, scale: 2
+    t.decimal  "debt_Ratio_3",              precision: 10, scale: 2
+    t.decimal  "debt_Ratio_4",              precision: 10, scale: 2
+    t.decimal  "current_ratio_0",           precision: 10, scale: 2
+    t.decimal  "current_ratio_1",           precision: 10, scale: 2
+    t.decimal  "current_ratio_2",           precision: 10, scale: 2
+    t.decimal  "current_ratio_3",           precision: 10, scale: 2
+    t.decimal  "current_ratio_4",           precision: 10, scale: 2
+    t.decimal  "debt_equity_ratio_0",       precision: 10, scale: 2
+    t.decimal  "debt_equity_ratio_1",       precision: 10, scale: 2
+    t.decimal  "debt_equity_ratio_2",       precision: 10, scale: 2
+    t.decimal  "debt_equity_ratio_3",       precision: 10, scale: 2
+    t.decimal  "debt_equity_ratio_4",       precision: 10, scale: 2
   end
 
   add_index "ratios_and_analyses", ["nse_script_name"], name: "index_ratios_and_analyses_on_nse_script_name"
@@ -483,7 +468,7 @@ ActiveRecord::Schema.define(version: 20150628124651) do
     t.string   "company_home_page"
     t.decimal  "f2_week_low",          precision: 10, scale: 2
     t.decimal  "f2_week_high",         precision: 10, scale: 2
-    t.decimal  "number_of_shares",     precision: 10, scale: 2
+    t.integer  "number_of_shares"
     t.string   "industry"
     t.datetime "created_at",                                    null: false
     t.datetime "updated_at",                                    null: false

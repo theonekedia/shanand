@@ -12,10 +12,10 @@ class DayTradingsController < ApplicationController
   # GET /day_tradings/1.json
   def show
 	@day_trading = DayTrading.find_by_nse_script_name(params[:nse_script_name])
-	@ratios_and_analysis = RatiosAndAnalysis.find_by_nse_script_name(params[:nse_script_name])
+#	@ratios_and_analysis = RatiosAndAnalysis.find_by_nse_script_name(params[:nse_script_name])
 	@profit_and_loss = ProfitAndLoss.find_by_nse_script_name(params[:nse_script_name])
 	#@balance_sheet = BalanceSheet.find_by_nse_script_name(params[:nse_script_name])
-	render template: 'balance_sheet/show.html.erb'
+	#render template: 'balance_sheet/show.html.erb'
   end
 
   # GET /day_tradings/new

@@ -1,8 +1,60 @@
 <p>
+
+---------------- Yet to do --------------------------
+
+Action in daytrading controller
+1. get the list for share price less than graham value 
+2. Add 52-week low and high to day_trading index view
+
+Do I need to add table for sector, if yes what should the fields and what urpose te table should serve.
+
+------------------ Company Controller  --------------------------------
+Views
+1. Ratios with graphs
+2. compititors by Market cap
+3. Day Trading Details 
+	industry, day_high day_low, day_close, % change, market Cap, eps p/e, number of shares traded
+4. Meta Data
+	Home Page Url, 52 week high and low, total issues shares, little bio
+5. Risk table results.
+6. Historical Prices
+
+
+Controller Actions
+1. Trading info :- day_high day_low, day_close, % change, market Cap, eps p/e, number of shares traded.
+2. 
+
+
+--------------Done -----------------
 	in script meta table and day_trading _table
 graham value
 EPS
 Book Value
+
+LinkedIn oauth2 API is set.
+For twitter email is not retrieved for user.
+
+ALter the tables.
+	Script_meta_datum
+
+	1. money_control_script_name to company_display_name
+	rename_column :script_meta_datum, :money_control_script_name, :company_display_name
+	2. money_control_link to company_home_page
+	rename_column :script_meta_datum, :money_control_link, :company_home_page
+	3. remove market_cap from script_meta_datum
+	remove_column :script_meta_datum, market_cap
+	4. add nse_hist_tbl_name
+	5. add bse_hist_tbl_name
+
+	DayTrading table
+
+	1. Add market_cap, total outstanding shares to 
+	2. v_eps, v_number_of_shares, v_book_value 
+
+Have to formulate the ratios newly.
+Add new fields to rations table
+update PL and Bal sheet table 
+
 
 
 </p>	
