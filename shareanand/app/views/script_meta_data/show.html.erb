@@ -1,4 +1,33 @@
 <p id="notice"><%= notice %></p>
-<%= @script_meta_datum %>
+<h2> Script Details of <%= @script_meta_datum.nse_script_name %></h2>
+<div class="col-md-6">
+<aside class="span4">
+<section>
+        <p> ISIN			: <%= @script_meta_datum.isi_num %></p>
+        <p> Company Name 	: <%= @script_meta_datum.company_display_name %></p>
+        <p> BSE	 			: <%= @script_meta_datum.bse_script_numb %></p>
+        <p> BSE Table		: <%= @script_meta_datum.bse_hist_tbl_name %></p>
+        <p> NSE				: <%= @script_meta_datum.nse_script_name %></p>
+        <p> NSE Table		: <%= @script_meta_datum.nse_hist_tbl_name %></p>
+        <p> Home Page   	: <%= @script_meta_datum.company_home_page %></p>    
+        <p> Balance Sheet   : <%= link_to "Balance_sheet", @script_meta_datum.balance_sheet_link %></p>
+        <p> Profit-Loss Sheet: <%= link_to "Profit-Loss",  @script_meta_datum.p_l_link %></p>
+        
+        
+</div>        
+<div class="col-md-6">
+	<p> Industry 			: <%= @script_meta_datum.industry %></p>
+	<p>Number Of Shares     	: <%= @script_meta_datum.number_of_shares %></p>
+	<p>Graham Value 		: <%= @script_meta_datum.graham_fvp %></p>
+        <p>EPS         			: <%= @script_meta_datum.eps %></p>
+        <p>Book value    		: <%= @script_meta_datum.book_value %></p>
+        <p>52 Week High 		: <%= @script_meta_datum.f2_week_high %></p>
+        <p>52 Week Low 			: <%= @script_meta_datum.f2_week_low %></p>
+        <p>Created At 			: <%= @script_meta_datum.created_at %></p>
+        <p>Updated At 			: <%= @script_meta_datum.updated_at %></p>
+
+</div>        
+
+
 <%= link_to 'Edit', edit_script_meta_datum_path(@script_meta_datum) %> |
 <%= link_to 'Back', script_meta_data_path %>

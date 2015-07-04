@@ -102,7 +102,7 @@ class RatiosAndAnalysesController < ApplicationController
     data_table.set_cell(3, 0, '2013')
     data_table.set_cell(3, 1, cur_yr_1)
     
-	data_table.set_cell(4, 0, '2014')
+    data_table.set_cell(4, 0, '2014')
     data_table.set_cell(4, 1, cur_yr)
     
     opts   = { :width => 500, :height => 300, :title => heading, :legend => 'bottom' }

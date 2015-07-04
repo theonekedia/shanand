@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   root to: 'ratios_and_analyses#home'  
 
   devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
-  resources :users
+  #resources :users
   match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
-  
+  get '/users/:id' => 'users#show', as: 'profile'
+  #get '/profile', to: 'users#show', as: 'profile'
+
   resources :ratios_and_analyses,	param: :nse_script_name
 
   resources :day_tradings,	param: :nse_script_name
@@ -15,6 +17,9 @@ Rails.application.routes.draw do
   resources :balance_sheets,   param: :nse_script_name
 
   resources :script_meta_data, param: :nse_script_name
+get '/graham_to_price', to: 'day_tradings#graham_vs_price', as: 'graham_to_price'  
+
+get '/company_info/:nse_script_name', to: 'company_details#show', as: 'company_details'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

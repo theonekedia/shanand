@@ -1,5 +1,6 @@
 <h1>Editing Script Meta Datum</h1>
 <div class="form-group">
+	<div class="col-md-6">	
 	<%=form_for(@script_meta_datum) do |f| %>
 		<%= f.label :isi_num, raw("Script ISIN code")%>
 		<%= f.text_field :isi_num %>
@@ -7,21 +8,42 @@
 		<%= f.text_field :bse_script_numb %>
 		<%= f.label :nse_script_name, raw("NSE Script name")%>
 		<%= f.text_field :nse_script_name %>
-		<%= f.label :money_control_script_name, raw("MoneyControl Script Name")%>
-		<%= f.text_field :money_control_script_name %>
+		<%= f.label :company_display_name, raw("Company Display Name")%>
+		<%= f.text_field :company_display_name %>
 		<%= f.label :financial_page_link, raw("Financial Page Link")%>
 		<%= f.text_field :financial_page_link %>
 		<%= f.label :balance_sheet_link, raw("Balance Sheet Link")%>
 		<%= f.text_field :balance_sheet_link %>
 		<%= f.label :p_l_link, raw("Profit and Loss Link")%>
 		<%= f.text_field :p_l_link %>
-		<%= f.label :money_control_link, raw("MoneyControl Link")%>
-		<%= f.text_field :money_control_link %>
+		<%= f.label :company_home_page, raw("Company Home Link")%>
+		<%= f.text_field :company_home_page %>
+		
+		
+	
+</div>
+<div class="col-md-6">	
 		<%= f.label :industry, raw("Industry")%>
 		<%= f.text_field :industry %>
-		<%= f.submit "update", class: "btn btn-default btn-primary" %>
-	<% end %>
+		<%= f.label :f2_week_low, raw("52 WK Low")%>
+		<%= f.text_field :f2_week_low %>
+		<%= f.label :f2_week_high, raw("52 WK High")%>	
+		<%= f.text_field :f2_week_high %>
+		<%= f.label :number_of_shares, raw("Number Of Shares")%>
+		<%= f.text_field :number_of_shares %>
+		<%= f.label :graham_fvp, raw("Graham Value")%>
+		<%= f.text_field :graham_fvp %>
+		<%= f.label :eps, raw("EPS")%>
+		<%= f.text_field :eps %>
+		<%= f.label :nse_hist_tbl_name, raw("NSE Table Name")%>
+		<%= f.text_field :nse_hist_tbl_name %>
+		<%= f.label :bse_hist_tbl_name, raw("BSE Table Name")%>		
+		<%= f.text_field :bse_hist_tbl_name %>
 </div>
 
+
+
+<%= f.submit "update", class: "btn btn-default btn-primary" %>
+<% end %>
 <%= link_to 'Show', @script_meta_datum %> |
 <%= link_to 'Back', script_meta_data_path %>

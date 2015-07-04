@@ -59,13 +59,17 @@ class User < ActiveRecord::Base
   TEMP_EMAIL_PREFIX = 'Changeit2getconfirmationmail@shareanand'
   TEMP_EMAIL_REGEX = /\A[^@]+@[^@]+\z/
 
-    def self.find_for_oauth(auth, signed_in_resource = nil)
+    def self.find_for_oauth(auth, current_user)
+
+    #authorization = Authorization.where(:provider => auth.provider, :uid => auth.uid.to_s, :token => auth.credentials.token, :secret => auth.credentials.secret).first_or_initialize
+    #if authorization.user.blank?
+    #  user = current_user || User.where('email = ?', auth["info"]["email"]).first
 
     data = auth.info
     # Get the identity and user if they exist
     identity = Identity.find_for_oauth(auth)
 
-    user = User.where(:provider => auth.provider, :uid => auth.uid ).first
+    user = current_user || User.where(:provider => auth.provider, :uid => auth.uid, :email => auth["info"]["email"]).first
     if user
       return user
     else

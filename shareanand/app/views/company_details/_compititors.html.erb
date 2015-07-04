@@ -1,0 +1,39 @@
+<h3> Compititors </h3>
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th> Company </th>
+      <th> 52 Week Low </th>
+      <th> 52 Week High </th>
+      <th> Number of Shares </th>
+      <th> Graham Fair Value Price </th>
+      <th> Book Value </th>
+      <th> EPS </th>
+      <th> Latest Price </th>
+      <th> % Chg </th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @compititors.each do |compititor| %>
+      <tr>
+		
+		
+		<td><%= compititor.nse_script_name %></td>
+		<td><%= compititor.f2_week_low.round(2) %></td>
+		<td><%= compititor.f2_week_high.round(2) %></td>
+    <td><%= compititor.number_of_shares %></td>
+    <td><%= compititor.graham_fvp.round(2) %></td>
+    <td><%= compititor.book_value %></td>
+    <td><%= compititor.eps %></td>
+
+    <% trad_val=DayTrading.find_by_nse_script_name(compititor.nse_script_name) %>
+    <td><%= trad_val.today_close %></td>
+    <td><%= trad_val.perc_change.round(2) %></td>  
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>

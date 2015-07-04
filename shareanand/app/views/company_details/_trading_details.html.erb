@@ -1,0 +1,23 @@
+<div class="row">
+<h3> Trading Details </h3>
+<div class="col-md-6">
+<aside class="span4">
+<section>
+        <p>Open        : <%= @day_trading.today_open %></p>
+        <p>High        : <%= @day_trading.today_high %></p>
+        <p>Low         : <%= @day_trading.today_low %></p>
+        <p>Close       : <%= @day_trading.today_close %></p>
+        <p>Prev.Close  : <%= @day_trading.pre_day_close %></p>
+        <p>% Change    : <%= @day_trading.perc_change %></p>
+</div>        
+<div class="col-md-6">
+        <p>Graham Value: <%= @day_trading.graham_fvp %></p>
+        <p>EPS         : <%= @day_trading.eps %></p>
+        <p>P/E         : <%= @day_trading.pe_ratio %></p>
+        <p>Market Cap  : <%= @day_trading.market_cap %></p>
+        <p>Volume      : <%= @day_trading.tot_shares_traded %></p>
+        <p>52 Week High: <%= @script_meta_datum.f2_week_high %></p>
+        <p>52 Week Low : <%= @script_meta_datum.f2_week_low %></p>
+</div>        
+</div>
+

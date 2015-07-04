@@ -27,6 +27,12 @@ class DayTradingsController < ApplicationController
   def edit
   end
 
+def graham_vs_price 
+  # dislay the scripts for which price is less than graham value
+  # select * from DayTrading where graham_fvp > day_close.
+  @day_tradings=DayTrading.where("today_close < graham_fvp")
+end
+
   # POST /day_tradings
   # POST /day_tradings.json
   def create

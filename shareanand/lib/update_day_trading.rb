@@ -47,10 +47,10 @@ end
 # call the function to get the file name.
 def self.update_table
 
-#fil=File.open('/home/sradhu/BRM/Shareanand_rough/log.txt',"a")
+fil=File.open('/home/sradhu/BRM/Shareanand_rough/log.txt',"a")
 csv_file= get_csv_file
 #csv_file='/home/sradhu/MyProject/Source_code/shareanand/content/nse_bhav_copy/2015/June/CSV/cm12JUN2015bhav.csv'
-#fil.puts csv_file
+fil.puts csv_file
 
 #open csv file
 

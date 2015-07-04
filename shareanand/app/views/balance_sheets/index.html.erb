@@ -12,7 +12,7 @@
   <tbody>
     <% @balance_sheets.each do |balance_sheet| %>
       <tr>
-		<td><%= balance_sheet.nse_script_name %></td>
+		<td><%= link_to balance_sheet.nse_script_name company_details_path(balance_sheet.nse_script_name) %></td>
         <td><%= balance_sheet.tot_shr_cap_0 %></td>
         <td><%= balance_sheet.reval_rsrvs_1 %></td>
         <td><%= balance_sheet.net_block_0 %></td>
@@ -20,7 +20,6 @@
         <td><%= balance_sheet.sndr_debts_0 %></td>
         <td><%= balance_sheet.reserves_0 %></td>
         <td><%= balance_sheet.networth_1 %></td>
-        <td><%= link_to 'Show', balance_sheet %></td>
         <td><%= link_to 'Edit', edit_balance_sheet_path(balance_sheet) %></td>
         <td><%= link_to 'Destroy', balance_sheet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

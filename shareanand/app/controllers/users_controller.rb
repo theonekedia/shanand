@@ -8,6 +8,8 @@ class UsersController < ApplicationController
   def show
      #authorize! :read, 
      @user=User.find(params[:id])
+     
+     
   end
 
 #def index
