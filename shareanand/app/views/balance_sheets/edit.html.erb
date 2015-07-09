@@ -1,6 +1,328 @@
-<h1>Editing Balance Sheet</h1>
+<p> add Javascript for caution : Update all Financial details. </p>
 
-<%= render 'form' %>
+<h1>Editing Balance Sheet</h1>
+	<table class="table table-striped table-bordered">
+<thead>
+    <tr>
+ 		<th colspan="1" class="detb" width="40%"></th>
+		<th align="right" class="detb">Mar '14</th>
+		<th align="right" class="detb">Mar '13</th>
+		<th align="right" class="detb">Mar '12</th>
+		<th align="right" class="detb">Mar '11</th>
+		<th align="right" class="detb">Mar '10</th>
+    
+    
+    </tr>
+  </thead>
+
+
+	<%=form_for(@balance_sheet) do |f| %>
+	<tbody>
+	    <tr height="22px">
+              <td colspan="1"> Total Caital Share </td>
+    <td><%= f.text_field :tot_shr_cap_0 %></td>
+	<td><%= f.text_field :tot_shr_cap_1 %></td>
+	<td><%= f.text_field :tot_shr_cap_2 %></td>
+	<td><%= f.text_field :tot_shr_cap_3 %></td>
+	<td><%= f.text_field :tot_shr_cap_4 %></td>
+		</tr>
+	<tr height="22px">
+<td colspan="1" >Equity Share Capital</td>
+<td><%= f.text_field :eq_shr_cap_0 %></td>
+<td><%= f.text_field :eq_shr_cap_1 %></td>
+<td><%= f.text_field :eq_shr_cap_2 %></td>
+<td><%= f.text_field :eq_shr_cap_3 %></td>
+<td><%= f.text_field :eq_shr_cap_4 %></td>
+				</tr>
+			<tr height="22px">
+<td colspan="1" >Share Application Money</td>
+<td><%= f.text_field :shr_appl_mny_0 %></td>
+<td><%= f.text_field :shr_appl_mny_1 %></td>
+<td><%= f.text_field :shr_appl_mny_2 %></td>
+<td><%= f.text_field :shr_appl_mny_3 %></td>
+<td><%= f.text_field :shr_appl_mny_4 %></td>
+				</tr>
+			<tr height="22px">
+<td colspan="1" >Preference Share Capital</td>
+<td><%= f.text_field :pre_shr_cap_0 %></td>
+<td><%= f.text_field :pre_shr_cap_1 %></td>
+<td><%= f.text_field :pre_shr_cap_2 %></td>
+<td><%= f.text_field :pre_shr_cap_3 %></td>
+<td><%= f.text_field :pre_shr_cap_4 %></td>
+				</tr>
+			<tr height="22px">
+<td colspan="1" >Reserves</td>
+<td><%= f.text_field :reserves_0 %></td>
+<td><%= f.text_field :reserves_1 %></td>
+<td><%= f.text_field :reserves_2 %></td>
+<td><%= f.text_field :reserves_3 %></td>
+<td><%= f.text_field :reserves_4 %></td>
+				</tr>
+			<tr height="22px">
+<td colspan="1" >Networth</td>
+<td><%= f.text_field :networth_0 %></td>
+<td><%= f.text_field :networth_1 %></td>
+<td><%= f.text_field :networth_2 %></td>
+<td><%= f.text_field :networth_3 %></td>
+<td><%= f.text_field :networth_4 %></td>
+				</tr>
+			<tr height="22px">
+<td colspan="1" >Secured Loans</td>
+<td><%= f.text_field :scrd_lons_0 %></td>
+<td><%= f.text_field :scrd_lons_1 %></td>
+<td><%= f.text_field :scrd_lons_2 %></td>
+<td><%= f.text_field :scrd_lons_3 %></td>
+<td><%= f.text_field :scrd_lons_4 %></td>
+				</tr>
+			<tr height="22px">
+<td colspan="1" >Unsecured Loans</td>
+<td><%= f.text_field :unscrd_lons_0 %></td>
+<td><%= f.text_field :unscrd_lons_1 %></td>
+<td><%= f.text_field :unscrd_lons_2 %></td>
+<td><%= f.text_field :unscrd_lons_3 %></td>
+<td><%= f.text_field :unscrd_lons_4 %></td>
+				</tr>
+			<tr height="22px">
+<td colspan="1" >Total Debt</td>
+<td><%= f.text_field :tot_debt_0 %></td>
+<td><%= f.text_field :tot_debt_1 %></td>
+<td><%= f.text_field :tot_debt_2 %></td>
+<td><%= f.text_field :tot_debt_3 %></td>
+<td><%= f.text_field :tot_debt_4 %></td>
+				</tr>
+			<tr height="22px">
+
+<td colspan="1" >Total Liabilities</td>
+<td><%= f.text_field :tot_liabs_0 %></td>
+<td><%= f.text_field :tot_liabs_1 %></td>
+<td><%= f.text_field :tot_liabs_2 %></td>
+<td><%= f.text_field :tot_liabs_3 %></td>
+<td><%= f.text_field :tot_liabs_4 %></td>
+				</tr>
+			<tr height="22px">
+
+<td colspan="1" >Gross Block</td>
+<td><%= f.text_field :gros_block_0 %></td>
+<td><%= f.text_field :gros_block_1 %></td>
+<td><%= f.text_field :gros_block_2 %></td>
+<td><%= f.text_field :gros_block_3 %></td>
+<td><%= f.text_field :gros_block_4 %></td>
+
+				</tr>
+			<tr height="22px">
+
+<td colspan="1" >Less: Revaluation Reserves</td>
+<td><%= f.text_field :reval_rsrvs_0 %></td>
+<td><%= f.text_field :reval_rsrvs_1 %></td>
+<td><%= f.text_field :reval_rsrvs_2 %></td>
+<td><%= f.text_field :reval_rsrvs_3 %></td>
+<td><%= f.text_field :reval_rsrvs_4 %></td>
+
+				</tr>
+			<tr height="22px">
+
+<td colspan="1" >Less: Accum. Depreciation</td>
+<td><%= f.text_field :accm_deprec_0 %></td>
+<td><%= f.text_field :accm_deprec_1 %></td>
+<td><%= f.text_field :accm_deprec_2 %></td>
+<td><%= f.text_field :accm_deprec_3 %></td>
+<td><%= f.text_field :accm_deprec_4 %></td>
+
+				</tr>
+			<tr height="22px">
+
+<td colspan="1" >Net Block</td>
+<td><%= f.text_field :net_block_0 %></td>
+<td><%= f.text_field :net_block_1 %></td>
+<td><%= f.text_field :net_block_2 %></td>
+<td><%= f.text_field :net_block_3 %></td>
+<td><%= f.text_field :net_block_4 %></td>
+				</tr>
+			<tr height="22px">
+
+<td colspan="1" >Capital Work in Progress</td>
+<td><%= f.text_field :cap_wip_0 %></td>
+<td><%= f.text_field :cap_wip_1 %></td>
+<td><%= f.text_field :cap_wip_2 %></td>
+<td><%= f.text_field :cap_wip_3 %></td>
+<td><%= f.text_field :cap_wip_4 %></td>
+
+				</tr>
+			<tr height="22px">
+
+<td colspan="1" >Investments</td>
+<td><%= f.text_field :invstmnts_0 %></td>
+<td><%= f.text_field :invstmnts_1 %></td>
+<td><%= f.text_field :invstmnts_2 %></td>
+<td><%= f.text_field :invstmnts_3 %></td>
+<td><%= f.text_field :invstmnts_4 %></td>
+
+				</tr>
+			<tr height="22px">
+
+<td colspan="1" >Inventories</td>
+<td><%= f.text_field :inventory_0 %></td>
+<td><%= f.text_field :inventory_1 %></td>
+<td><%= f.text_field :inventory_2 %></td>
+<td><%= f.text_field :inventory_3 %></td>
+<td><%= f.text_field :inventory_4 %></td>
+
+				</tr>
+			<tr height="22px">
+
+<td colspan="1" >Sundry Debtors</td>
+<td><%= f.text_field :sndr_debts_0 %></td>
+<td><%= f.text_field :sndr_debts_1 %></td>
+<td><%= f.text_field :sndr_debts_2 %></td>
+<td><%= f.text_field :sndr_debts_3 %></td>
+<td><%= f.text_field :sndr_debts_4 %></td>
+
+				</tr>
+			<tr height="22px">
+
+<td colspan="1" >Cash and Bank Balance</td>
+<td><%= f.text_field :c_b_bal_0 %></td>
+<td><%= f.text_field :c_b_bal_1 %></td>
+<td><%= f.text_field :c_b_bal_2 %></td>
+<td><%= f.text_field :c_b_bal_3 %></td>
+<td><%= f.text_field :c_b_bal_4 %></td>
+
+				</tr>
+			<tr height="22px">
+
+<td colspan="1" >Total Current Assets</td>
+<td><%= f.text_field :tot_curr_assets_0 %></td>
+<td><%= f.text_field :tot_curr_assets_1 %></td>
+<td><%= f.text_field :tot_curr_assets_2 %></td>
+<td><%= f.text_field :tot_curr_assets_3 %></td>
+<td><%= f.text_field :tot_curr_assets_4 %></td>
+
+				</tr>
+			<tr height="22px">
+
+<td colspan="1" >Loans and Advances</td>
+<td><%= f.text_field :loans_addv_0 %></td>
+<td><%= f.text_field :loans_addv_1 %></td>
+<td><%= f.text_field :loans_addv_2 %></td>
+<td><%= f.text_field :loans_addv_3 %></td>
+<td><%= f.text_field :loans_addv_4 %></td>
+
+				</tr>
+			<tr height="22px">
+
+<td colspan="1" >Fixed Deposits</td>
+<td><%= f.text_field :fixd_deps_0 %></td>
+<td><%= f.text_field :fixd_deps_1 %></td>
+<td><%= f.text_field :fixd_deps_2 %></td>
+<td><%= f.text_field :fixd_deps_3 %></td>
+<td><%= f.text_field :fixd_deps_4 %></td>
+
+				</tr>
+			<tr height="22px">
+
+<td colspan="1" >Total CA, Loans & Advances</td>
+<td><%= f.text_field :tot_ca_loans_adv_0 %></td>
+<td><%= f.text_field :tot_ca_loans_adv_1 %></td>
+<td><%= f.text_field :tot_ca_loans_adv_2 %></td>
+<td><%= f.text_field :tot_ca_loans_adv_3 %></td>
+<td><%= f.text_field :tot_ca_loans_adv_4 %></td>
+				
+				</tr>
+			<tr height="22px">
+
+<td colspan="1" >Deferred Credit</td>
+<td><%= f.text_field :defrd_cr_0 %></td>
+<td><%= f.text_field :defrd_cr_1 %></td>
+<td><%= f.text_field :defrd_cr_2 %></td>
+<td><%= f.text_field :defrd_cr_3 %></td>
+<td><%= f.text_field :defrd_cr_4 %></td>
+
+				</tr>
+			<tr height="22px">
+
+<td colspan="1" >Current Liabilities</td>
+<td><%= f.text_field :curr_liabs_0 %></td>
+<td><%= f.text_field :curr_liabs_1 %></td>
+<td><%= f.text_field :curr_liabs_2 %></td>
+<td><%= f.text_field :curr_liabs_3 %></td>
+<td><%= f.text_field :curr_liabs_4 %></td>
+
+				</tr>
+			<tr height="22px">
+
+<td colspan="1" >Provisions</td>
+<td><%= f.text_field :provisions_0 %></td>
+<td><%= f.text_field :provisions_1 %></td>
+<td><%= f.text_field :provisions_2 %></td>
+<td><%= f.text_field :provisions_3 %></td>
+<td><%= f.text_field :provisions_4 %></td>
+					</tr>
+			<tr height="22px">
+
+<td colspan="1" >Total CL&Provisions</td>
+<td><%= f.text_field :tot_cl_provs_0 %></td>
+<td><%= f.text_field :tot_cl_provs_1 %></td>
+<td><%= f.text_field :tot_cl_provs_2 %></td>
+<td><%= f.text_field :tot_cl_provs_3 %></td>
+<td><%= f.text_field :tot_cl_provs_4 %></td>
+
+				</tr>
+			<tr height="22px">
+<td colspan="1" >Net Current Assets</td>
+<td><%= f.text_field :net_curr_assets_0 %></td>
+<td><%= f.text_field :net_curr_assets_1 %></td>
+<td><%= f.text_field :net_curr_assets_2 %></td>
+<td><%= f.text_field :net_curr_assets_3 %></td>
+<td><%= f.text_field :net_curr_assets_4 %></td>
+
+				</tr>
+			<tr height="22px">
+
+<td colspan="1" >Miscellaneous Expenses</td>
+<td><%= f.text_field :misc_expen_0 %></td>
+<td><%= f.text_field :misc_expen_1 %></td>
+<td><%= f.text_field :misc_expen_2 %></td>
+<td><%= f.text_field :misc_expen_3 %></td>
+<td><%= f.text_field :misc_expen_4 %></td>
+				</tr>
+			<tr height="22px">
+
+
+<td colspan="1" >Total Assets</td>
+<td><%= f.text_field :tot_assets_0 %></td>
+<td><%= f.text_field :tot_assets_1 %></td>
+<td><%= f.text_field :tot_assets_2 %></td>
+<td><%= f.text_field :tot_assets_3 %></td>
+<td><%= f.text_field :tot_assets_4 %></td>
+
+				</tr>
+			<tr height="22px">
+
+<td colspan="1" >Contingent Liabilities</td>
+<td><%= f.text_field :contignt_liabs_0 %></td>
+<td><%= f.text_field :contignt_liabs_1 %></td>
+<td><%= f.text_field :contignt_liabs_2 %></td>
+<td><%= f.text_field :contignt_liabs_3 %></td>
+<td><%= f.text_field :contignt_liabs_4 %></td>
+
+				</tr>
+			<tr height="22px">
+
+<td colspan="1" >Book Value (Rs)</td>
+<td><%= f.text_field :bk_val_0 %></td>
+<td><%= f.text_field :bk_val_1 %></td>
+<td><%= f.text_field :bk_val_2 %></td>
+<td><%= f.text_field :bk_val_3 %></td>
+<td><%= f.text_field :bk_val_4 %></td>
+
+				</tr>
+	
+</tbody>
+
+<%= f.submit "update", class: "btn btn-default btn-primary" %>
+<% end %>
+
+
 
 <%= link_to 'Show', @balance_sheet %> |
 <%= link_to 'Back', balance_sheets_path %>

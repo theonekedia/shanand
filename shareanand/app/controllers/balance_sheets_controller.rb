@@ -10,6 +10,8 @@ class BalanceSheetsController < ApplicationController
   # GET /balance_sheets/1
   # GET /balance_sheets/1.json
   def show
+# add if condition to check whether the industry is banking or now
+# action show is not required here.
   @balance_sheet = BalanceSheet.find_by_nse_script_name(params[:nse_script_name])
   end
 

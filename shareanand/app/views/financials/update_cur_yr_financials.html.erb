@@ -1,0 +1,482 @@
+<h1> Update Current Year Financial for <%= @balance_sheet.nse_script_name %> </h1>
+
+<div class="col-md-5">
+	<h3> Balance Sheet</h3>
+<%=form_for(@balance_sheet) do |f| %>
+	
+	<div class="form-group">
+        <%= f.label     :tot_shr_cap_0, "Total Caital Share", class: "col-sm-8" %>
+        <div class="col-sm-4">
+        	<%= f.text_field :tot_shr_cap_0, class: "form-control", style: "text-align: right" %>
+    	</div>
+    </div>
+              
+	<div class="form-group">
+		<%= f.label  :eq_shr_cap_0, "Equity Share Capital", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :eq_shr_cap_0, class: "form-control", style: "text-align: right" %>
+		</div>
+    </div>
+
+	<div class="form-group">
+		<%= f.label   :shr_appl_mny_0, "Share Application Money", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :shr_appl_mny_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<%= f.label     :pre_shr_cap_0,"Preference Share Capital" , class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :pre_shr_cap_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :reserves_0 , "Reserves", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :reserves_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :networth_0 , "Networth", class: "col-sm-8"%>
+		<div class="col-sm-4">
+			<%= f.text_field :networth_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<%= f.label     :scrd_lons_0 , "Secured Loans", class: "col-sm-8"%>
+		<div class="col-sm-4">
+			<%= f.text_field :scrd_lons_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :unscrd_lons_0 , "Unsecured Loans", class: "col-sm-8"%>
+		<div class="col-sm-4">
+			<%= f.text_field :unscrd_lons_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+
+	<div class="form-group">
+		<%= f.label     :tot_debt_0 , "Total Debt", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :tot_debt_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :tot_liabs_0 , "Total Liabilities", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :tot_liabs_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<%= f.label     :gros_block_0 , "Gross Block", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :gros_block_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<%= f.label     :reval_rsrvs_0 , "Less: Revaluation Reserves", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :reval_rsrvs_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :accm_deprec_0 , "Less: Accum. Depreciation", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :accm_deprec_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :net_block_0 , "Net Block", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :net_block_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :cap_wip_0 , "Capital Work in Progress", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :cap_wip_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :invstmnts_0 , "Investments", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :invstmnts_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :inventory_0 , "Inventories", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :inventory_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :sndr_debts_0 , "Sundry Debtors", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :sndr_debts_0, class: "form-control", style: "text-align: right" %>
+				</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :c_b_bal_0 , "Cash and Bank Balance", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :c_b_bal_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :tot_curr_assets_0 , "Total Current Assets", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :tot_curr_assets_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :loans_addv_0 , "Loans and Advances", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :loans_addv_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :fixd_deps_0 , "Fixed Deposits", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :fixd_deps_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :tot_ca_loans_adv_0 , "Total CA, Loans & Advances", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :tot_ca_loans_adv_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :defrd_cr_0 , "Deferred Credit", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :defrd_cr_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :curr_liabs_0 , "Current Liabilities", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :curr_liabs_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :provisions_0 , "Provisions", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :provisions_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :tot_cl_provs_0 , "Total CL&Provisions", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :tot_cl_provs_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :net_curr_assets_0 , "Net Current Assets", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :net_curr_assets_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :misc_expen_0 , "Miscellaneous Expenses", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :misc_expen_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :tot_assets_0 , "Total Assets", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :tot_assets_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :contignt_liabs_0 , "Contingent Liabilities", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :contignt_liabs_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :bk_val_0 , "Book Value (Rs)", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :bk_val_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+<%= f.submit "update", class: "btn btn-default btn-primary" %>
+<% end %>
+
+</div>
+
+<div class="col-md-2">
+
+</div>
+
+<div class="col-md-5">
+<h3> Profit and Loss</h3>
+
+<%=form_for(@profit_and_loss) do |f| %>
+	  
+	<div class="form-group">
+		<%= f.label     :sal_turnovr_0 , "Sales Turnover", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :sal_turnovr_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :excs_duty_0 , "Excise Duty ", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :excs_duty_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :net_sales_0 , "Net Sales ", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :net_sales_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :other_income_0 , "Other Income ", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :other_income_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<%= f.label     :stck_adjst_0 , "Stock Adjustments ", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :stck_adjst_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :tot_income_0 , "Total Income ", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :tot_income_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :raw_matrls_0 , "Raw Materials ", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :raw_matrls_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :pwr_fuel_cst_0 , "Power & Fuel Cost ", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :pwr_fuel_cst_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :exmploy_cst_0 , "Employee Cost ", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :exmploy_cst_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :othr_manufctr_exp_0 , "Other Manufacturing Expenses ", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :othr_manufctr_exp_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :selling_admin_exp_0 , "Selling and Admin Expenses", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :selling_admin_exp_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :misc_exp_0 , "Miscellaneous Expenses", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :misc_exp_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :preoperative_exp_cap_0 , "Preoperative Exp Capitalised", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :preoperative_exp_cap_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :tot_exp_0 , "Total Expenses", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :tot_exp_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<%= f.label     :opertng_prft_0 , "Operating Profit ", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :opertng_prft_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :pbdit_0 , "PBDIT ", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :pbdit_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<%= f.label     :interest_0 , "Interest ", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :interest_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<%= f.label     :pbdt_0 , "PBDT ", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :pbdt_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :deprec_0 , "Depreciation ", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :deprec_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :othr_writn_off_0 , "Other Written Off ", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :othr_writn_off_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :pbt_0 , "Profit Before Tax ", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :pbt_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :extr_ord_itms_0 , "Extra-ordinary items ", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :extr_ord_itms_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<%= f.label     :post_pbt_0 , "PBT (Post Extra-ord Items) ", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :post_pbt_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<%= f.label     :tax_0 , "Tax ", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :tax_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :repo_net_prft_0 , "Reported Net Profit ", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :repo_net_prft_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :tot_val_adtn_0 , "Total Value Addition ", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :tot_val_adtn_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :pref_dvdnd_0 , "Preference Dividend ", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :pref_dvdnd_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :equ_dvdnd_0 , "Equity Dividend ", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :equ_dvdnd_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :co_div_tax_0 , "Corporate Dividend Tax ", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :co_div_tax_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :no_shares_issued_0 , "Shares in issue (lakhs) ", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :no_shares_issued_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :eps_0 , "Earning Per Share (Rs) ", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :eps_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :eqt_divdnd_perc_0 , "Equity Dividend (%) ", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :eqt_divdnd_perc_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label     :bk_val_0 , "Book Value (Rs) ", class: "col-sm-8" %>
+		<div class="col-sm-4">
+			<%= f.text_field :bk_val_0, class: "form-control", style: "text-align: right" %>
+		</div>
+	</div>
+
+
+<%= f.submit "update", class: "btn btn-default btn-primary" %>
+<% end %>
+</div>
+
+
+

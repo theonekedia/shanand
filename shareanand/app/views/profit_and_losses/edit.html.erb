@@ -1,6 +1,298 @@
+
 <h1>Editing Profit And Loss</h1>
 
-<%= render 'form' %>
+<p> add Javascript for caution : Update all Financial details. </p>
 
+	<table class="table table-striped table-bordered">
+<thead>
+    <tr>
+ 		<th colspan="1" class="detb" width="40%"></th>
+		<th align="right" class="detb">Mar '14</th>
+		<th align="right" class="detb">Mar '13</th>
+		<th align="right" class="detb">Mar '12</th>
+		<th align="right" class="detb">Mar '11</th>
+		<th align="right" class="detb">Mar '10</th>
+    
+    
+    </tr>
+  </thead>
+
+
+	<%=form_for(@profit_and_loss) do |f| %>
+	<tbody>
+	  
+	<tr height="22px">
+							<td colspan="1"> Sales Turnover</td>
+							<td><%= f.text_field :sal_turnovr_0 %></td>
+							<td><%= f.text_field :sal_turnovr_1 %></td>
+							<td><%= f.text_field :sal_turnovr_2 %></td>
+							<td><%= f.text_field :sal_turnovr_3 %></td>
+							<td><%= f.text_field :sal_turnovr_4 %></td>
+				</tr>
+			<tr height="22px">
+							<td colspan="1">Excise Duty </td>
+							<td><%= f.text_field :excs_duty_0 %></td>
+							<td><%= f.text_field :excs_duty_1 %></td>
+							<td><%= f.text_field :excs_duty_2 %></td>
+							<td><%= f.text_field :excs_duty_3 %></td>
+							<td><%= f.text_field :excs_duty_4 %></td>
+				</tr>
+			<tr height="22px">
+
+							<td colspan="1">Net Sales </td>
+							<td><%= f.text_field :net_sales_0 %></td>
+							<td><%= f.text_field :net_sales_1 %></td>
+							<td><%= f.text_field :net_sales_2 %></td>
+							<td><%= f.text_field :net_sales_3 %></td>
+							<td><%= f.text_field :net_sales_4 %></td>
+				</tr>
+			<tr height="22px">
+							<td colspan="1"> Other Income </td>
+							<td><%= f.text_field :other_income_0 %></td>
+							<td><%= f.text_field :other_income_1 %></td>
+							<td><%= f.text_field :other_income_2 %></td>
+							<td><%= f.text_field :other_income_3 %></td>
+							<td><%= f.text_field :other_income_4 %></td>
+				</tr>
+			<tr height="22px">
+							<td colspan="1" >Stock Adjustments </td>
+							<td><%= f.text_field :stck_adjst_0 %></td>
+							<td><%= f.text_field :stck_adjst_1 %></td>
+							<td><%= f.text_field :stck_adjst_2 %></td>
+							<td><%= f.text_field :stck_adjst_3 %></td>
+							<td><%= f.text_field :stck_adjst_4 %></td>
+				</tr>
+			<tr height="22px">
+							<td colspan="1" >Total Income </td>
+							<td><%= f.text_field :tot_income_0 %></td>
+							<td><%= f.text_field :tot_income_1 %></td>
+							<td><%= f.text_field :tot_income_2 %></td>
+							<td><%= f.text_field :tot_income_3 %></td>
+							<td><%= f.text_field :tot_income_4 %></td>
+				</tr>
+			<tr height="22px">
+							<td colspan="1"> Raw Materials </td>
+							<td><%= f.text_field :raw_matrls_0 %></td>
+							<td><%= f.text_field :raw_matrls_1 %></td>
+							<td><%= f.text_field :raw_matrls_2 %></td>
+							<td><%= f.text_field :raw_matrls_3 %></td>
+							<td><%= f.text_field :raw_matrls_4 %></td>
+				</tr>
+			<tr height="22px">
+							<td colspan="1"> Power & Fuel Cost </td>
+							<td><%= f.text_field :pwr_fuel_cst_0 %></td>
+							<td><%= f.text_field :pwr_fuel_cst_1 %></td>
+							<td><%= f.text_field :pwr_fuel_cst_2 %></td>
+							<td><%= f.text_field :pwr_fuel_cst_3 %></td>
+							<td><%= f.text_field :pwr_fuel_cst_4 %></td>
+				</tr>
+			<tr height="22px">
+							<td colspan="1"> Employee Cost </td>
+							<td><%= f.text_field :exmploy_cst_0 %></td>
+							<td><%= f.text_field :exmploy_cst_1 %></td>
+							<td><%= f.text_field :exmploy_cst_2 %></td>
+							<td><%= f.text_field :exmploy_cst_3 %></td>
+							<td><%= f.text_field :exmploy_cst_4 %></td>
+				</tr>
+			<tr height="22px">
+							<td colspan="1"> Other Manufacturing Expenses </td>
+							<td><%= f.text_field :othr_manufctr_exp_0 %></td>
+							<td><%= f.text_field :othr_manufctr_exp_1 %></td>
+							<td><%= f.text_field :othr_manufctr_exp_2 %></td>
+							<td><%= f.text_field :othr_manufctr_exp_3 %></td>
+							<td><%= f.text_field :othr_manufctr_exp_4 %></td>
+				</tr>
+			<tr height="22px">
+							<td colspan="1"> Selling and Admin Expenses</td>
+							<td><%= f.text_field :selling_admin_exp_0 %></td>
+							<td><%= f.text_field :selling_admin_exp_1 %></td>
+							<td><%= f.text_field :selling_admin_exp_2 %></td>
+							<td><%= f.text_field :selling_admin_exp_3 %></td>
+							<td><%= f.text_field :selling_admin_exp_4 %></td>
+				</tr>
+			<tr height="22px">
+							<td colspan="1"> Miscellaneous Expenses</td>
+							<td><%= f.text_field :misc_exp_0 %></td>
+							<td><%= f.text_field :misc_exp_1 %></td>
+							<td><%= f.text_field :misc_exp_2 %></td>
+							<td><%= f.text_field :misc_exp_3 %></td>
+							<td><%= f.text_field :misc_exp_4 %></td>
+				</tr>
+			<tr height="22px">
+							<td colspan="1"> Preoperative Exp Capitalised</td>
+							<td><%= f.text_field :preoperative_exp_cap_0 %></td>
+							<td><%= f.text_field :preoperative_exp_cap_1 %></td>
+							<td><%= f.text_field :preoperative_exp_cap_2 %></td>
+							<td><%= f.text_field :preoperative_exp_cap_3 %></td>
+							<td><%= f.text_field :preoperative_exp_cap_4 %></td>
+				</tr>
+			<tr height="22px">
+							<td colspan="1"> Total Expenses</td>
+							<td><%= f.text_field :tot_exp_0 %></td>
+							<td><%= f.text_field :tot_exp_1 %></td>
+							<td><%= f.text_field :tot_exp_2 %></td>
+							<td><%= f.text_field :tot_exp_3 %></td>
+							<td><%= f.text_field :tot_exp_4 %></td>
+				</tr>
+			<tr height="22px">
+							<td colspan="1"> Operating Profit </td>
+							<td><%= f.text_field :opertng_prft_0 %></td>
+							<td><%= f.text_field :opertng_prft_1 %></td>
+							<td><%= f.text_field :opertng_prft_2 %></td>
+							<td><%= f.text_field :opertng_prft_3 %></td>
+							<td><%= f.text_field :opertng_prft_4 %></td>
+				</tr>
+			<tr height="22px">
+							<td colspan="1"> PBDIT </td>
+							<td><%= f.text_field :pbdit_0 %></td>
+							<td><%= f.text_field :pbdit_1 %></td>
+							<td><%= f.text_field :pbdit_2 %></td>
+							<td><%= f.text_field :pbdit_3 %></td>
+							<td><%= f.text_field :pbdit_4 %></td>
+				</tr>
+			<tr height="22px">
+							<td colspan="1"> Interest </td>
+							<td><%= f.text_field :interest_0 %></td>
+							<td><%= f.text_field :interest_1 %></td>
+							<td><%= f.text_field :interest_2 %></td>
+							<td><%= f.text_field :interest_3 %></td>
+							<td><%= f.text_field :interest_4 %></td>
+				</tr>
+			<tr height="22px">
+							<td colspan="1"> PBDT </td>
+							<td><%= f.text_field :pbdt_0 %></td>
+							<td><%= f.text_field :pbdt_1 %></td>
+							<td><%= f.text_field :pbdt_2 %></td>
+							<td><%= f.text_field :pbdt_3 %></td>
+							<td><%= f.text_field :pbdt_4 %></td>
+				</tr>
+			<tr height="22px">
+							<td colspan="1"> Depreciation </td>
+							<td><%= f.text_field :deprec_0 %></td>
+							<td><%= f.text_field :deprec_1 %></td>
+							<td><%= f.text_field :deprec_2 %></td>
+							<td><%= f.text_field :deprec_3 %></td>
+							<td><%= f.text_field :deprec_4 %></td>
+				</tr>
+			<tr height="22px">
+							<td colspan="1"> Other Written Off </td>
+							<td><%= f.text_field :othr_writn_off_0 %></td>
+							<td><%= f.text_field :othr_writn_off_1 %></td>
+							<td><%= f.text_field :othr_writn_off_2 %></td>
+							<td><%= f.text_field :othr_writn_off_3 %></td>
+							<td><%= f.text_field :othr_writn_off_4 %></td>
+				</tr>
+			<tr height="22px">
+							<td colspan="1"> Profit Before Tax </td>
+							<td><%= f.text_field :pbt_0 %></td>
+							<td><%= f.text_field :pbt_1 %></td>
+							<td><%= f.text_field :pbt_2 %></td>
+							<td><%= f.text_field :pbt_3 %></td>
+							<td><%= f.text_field :pbt_4 %></td>
+				</tr>
+			<tr height="22px">
+							<td colspan="1"> Extra-ordinary items </td>
+							<td><%= f.text_field :extr_ord_itms_0 %></td>
+							<td><%= f.text_field :extr_ord_itms_1 %></td>
+							<td><%= f.text_field :extr_ord_itms_2 %></td>
+							<td><%= f.text_field :extr_ord_itms_3 %></td>
+							<td><%= f.text_field :extr_ord_itms_4 %></td>
+				</tr>
+			<tr height="22px">
+							<td colspan="1"> PBT (Post Extra-ord Items) </td>
+							<td><%= f.text_field :post_pbt_0 %></td>
+							<td><%= f.text_field :post_pbt_1 %></td>
+							<td><%= f.text_field :post_pbt_2 %></td>
+							<td><%= f.text_field :post_pbt_3 %></td>
+							<td><%= f.text_field :post_pbt_4 %></td>
+				</tr>
+			<tr height="22px">
+							<td colspan="1"> Tax </td>
+							<td><%= f.text_field :tax_0 %></td>
+							<td><%= f.text_field :tax_1 %></td>
+							<td><%= f.text_field :tax_2 %></td>
+							<td><%= f.text_field :tax_3 %></td>
+							<td><%= f.text_field :tax_4 %></td>
+				</tr>
+			<tr height="22px">
+							<td colspan="1"> Reported Net Profit </td>
+							<td><%= f.text_field :repo_net_prft_0 %></td>
+							<td><%= f.text_field :repo_net_prft_1 %></td>
+							<td><%= f.text_field :repo_net_prft_2 %></td>
+							<td><%= f.text_field :repo_net_prft_3 %></td>
+							<td><%= f.text_field :repo_net_prft_4 %></td>
+				</tr>
+			<tr height="22px">
+							<td colspan="1"> Total Value Addition </td>
+							<td><%= f.text_field :tot_val_adtn_0 %></td>
+							<td><%= f.text_field :tot_val_adtn_1 %></td>
+							<td><%= f.text_field :tot_val_adtn_2 %></td>
+							<td><%= f.text_field :tot_val_adtn_3 %></td>
+							<td><%= f.text_field :tot_val_adtn_4 %></td>
+				</tr>
+			<tr height="22px">
+							<td colspan="1"> Preference Dividend </td>
+							<td><%= f.text_field :pref_dvdnd_0 %></td>
+							<td><%= f.text_field :pref_dvdnd_1 %></td>
+							<td><%= f.text_field :pref_dvdnd_2 %></td>
+							<td><%= f.text_field :pref_dvdnd_3 %></td>
+							<td><%= f.text_field :pref_dvdnd_4 %></td>
+				</tr>
+			<tr height="22px">
+							<td colspan="1"> Equity Dividend </td>
+							<td><%= f.text_field :equ_dvdnd_0 %></td>
+							<td><%= f.text_field :equ_dvdnd_1 %></td>
+							<td><%= f.text_field :equ_dvdnd_2 %></td>
+							<td><%= f.text_field :equ_dvdnd_3 %></td>
+							<td><%= f.text_field :equ_dvdnd_4 %></td>
+				</tr>
+			<tr height="22px">
+							<td colspan="1"> Corporate Dividend Tax </td>
+							<td><%= f.text_field :co_div_tax_0 %></td>
+							<td><%= f.text_field :co_div_tax_1 %></td>
+							<td><%= f.text_field :co_div_tax_2 %></td>
+							<td><%= f.text_field :co_div_tax_3 %></td>
+							<td><%= f.text_field :co_div_tax_4 %></td>
+				</tr>
+			<tr height="22px">
+							<td colspan="1"> Shares in issue (lakhs) </td>
+							<td><%= f.text_field :no_shares_issued_0 %></td>
+							<td><%= f.text_field :no_shares_issued_1 %></td>
+							<td><%= f.text_field :no_shares_issued_2 %></td>
+							<td><%= f.text_field :no_shares_issued_3 %></td>
+							<td><%= f.text_field :no_shares_issued_4 %></td>
+				</tr>
+			<tr height="22px">
+							<td colspan="1"> Earning Per Share (Rs) </td>
+							<td><%= f.text_field :eps_0 %></td>
+							<td><%= f.text_field :eps_1 %></td>
+							<td><%= f.text_field :eps_2 %></td>
+							<td><%= f.text_field :eps_3 %></td>
+							<td><%= f.text_field :eps_4 %></td>
+				</tr>
+			<tr height="22px">
+							<td colspan="1"> Equity Dividend (%) </td>
+							<td><%= f.text_field :eqt_divdnd_perc_0 %></td>
+							<td><%= f.text_field :eqt_divdnd_perc_1 %></td>
+							<td><%= f.text_field :eqt_divdnd_perc_2 %></td>
+							<td><%= f.text_field :eqt_divdnd_perc_3 %></td>
+							<td><%= f.text_field :eqt_divdnd_perc_4 %></td>
+				</tr>
+			<tr height="22px">
+							<td colspan="1"> Book Value (Rs) </td>
+							<td><%= f.text_field :bk_val_0 %></td>
+							<td><%= f.text_field :bk_val_1 %></td>
+							<td><%= f.text_field :bk_val_2 %></td>
+							<td><%= f.text_field :bk_val_3 %></td>
+							<td><%= f.text_field :bk_val_4 %></td>
+				</tr>
+
+</tbody>
+
+<%= f.submit "update", class: "btn btn-default btn-primary" %>
+
+<% end %>
+
+<%= render 'form' %>
 <%= link_to 'Show', @profit_and_loss %> |
 <%= link_to 'Back', profit_and_losses_path %>

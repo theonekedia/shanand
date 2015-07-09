@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150628124651) do
+ActiveRecord::Schema.define(version: 20150707175535) do
 
   create_table "balance_sheets", force: :cascade do |t|
     t.string   "industry"
@@ -183,6 +183,333 @@ ActiveRecord::Schema.define(version: 20150628124651) do
   end
 
   add_index "balance_sheets", ["nse_script_name"], name: "index_balance_sheets_on_nse_script_name"
+
+  create_table "bank_balance_sheets", force: :cascade do |t|
+    t.string   "industry"
+    t.string   "isi_num",                                            null: false
+    t.string   "nse_script_name",                                    null: false
+    t.boolean  "cur_yr_updated"
+    t.decimal  "tot_shr_cap_0",             precision: 10, scale: 2
+    t.decimal  "tot_shr_cap_1",             precision: 10, scale: 2
+    t.decimal  "tot_shr_cap_2",             precision: 10, scale: 2
+    t.decimal  "tot_shr_cap_3",             precision: 10, scale: 2
+    t.decimal  "tot_shr_cap_4",             precision: 10, scale: 2
+    t.decimal  "eq_shr_cap_0",              precision: 10, scale: 2
+    t.decimal  "eq_shr_cap_1",              precision: 10, scale: 2
+    t.decimal  "eq_shr_cap_2",              precision: 10, scale: 2
+    t.decimal  "eq_shr_cap_3",              precision: 10, scale: 2
+    t.decimal  "eq_shr_cap_4",              precision: 10, scale: 2
+    t.decimal  "shr_appl_mny_0",            precision: 10, scale: 2
+    t.decimal  "shr_appl_mny_1",            precision: 10, scale: 2
+    t.decimal  "shr_appl_mny_2",            precision: 10, scale: 2
+    t.decimal  "shr_appl_mny_3",            precision: 10, scale: 2
+    t.decimal  "shr_appl_mny_4",            precision: 10, scale: 2
+    t.decimal  "pre_shr_cap_0",             precision: 10, scale: 2
+    t.decimal  "pre_shr_cap_1",             precision: 10, scale: 2
+    t.decimal  "pre_shr_cap_2",             precision: 10, scale: 2
+    t.decimal  "pre_shr_cap_3",             precision: 10, scale: 2
+    t.decimal  "pre_shr_cap_4",             precision: 10, scale: 2
+    t.decimal  "init_cntrb_stlr_0",         precision: 10, scale: 2
+    t.decimal  "init_cntrb_stlr_1",         precision: 10, scale: 2
+    t.decimal  "init_cntrb_stlr_2",         precision: 10, scale: 2
+    t.decimal  "init_cntrb_stlr_3",         precision: 10, scale: 2
+    t.decimal  "init_cntrb_stlr_4",         precision: 10, scale: 2
+    t.decimal  "pref_shr_appln_mny_0",      precision: 10, scale: 2
+    t.decimal  "pref_shr_appln_mny_1",      precision: 10, scale: 2
+    t.decimal  "pref_shr_appln_mny_2",      precision: 10, scale: 2
+    t.decimal  "pref_shr_appln_mny_3",      precision: 10, scale: 2
+    t.decimal  "pref_shr_appln_mny_4",      precision: 10, scale: 2
+    t.decimal  "emply_stck_optn_0",         precision: 10, scale: 2
+    t.decimal  "emply_stck_optn_1",         precision: 10, scale: 2
+    t.decimal  "emply_stck_optn_2",         precision: 10, scale: 2
+    t.decimal  "emply_stck_optn_3",         precision: 10, scale: 2
+    t.decimal  "emply_stck_optn_4",         precision: 10, scale: 2
+    t.decimal  "reserves_0",                precision: 10, scale: 2
+    t.decimal  "reserves_1",                precision: 10, scale: 2
+    t.decimal  "reserves_2",                precision: 10, scale: 2
+    t.decimal  "reserves_3",                precision: 10, scale: 2
+    t.decimal  "reserves_4",                precision: 10, scale: 2
+    t.decimal  "networth_0",                precision: 10, scale: 2
+    t.decimal  "networth_1",                precision: 10, scale: 2
+    t.decimal  "networth_2",                precision: 10, scale: 2
+    t.decimal  "networth_3",                precision: 10, scale: 2
+    t.decimal  "networth_4",                precision: 10, scale: 2
+    t.decimal  "deposits_0",                precision: 10, scale: 2
+    t.decimal  "deposits_1",                precision: 10, scale: 2
+    t.decimal  "deposits_2",                precision: 10, scale: 2
+    t.decimal  "deposits_3",                precision: 10, scale: 2
+    t.decimal  "deposits_4",                precision: 10, scale: 2
+    t.decimal  "borrowings_0",              precision: 10, scale: 2
+    t.decimal  "borrowings_1",              precision: 10, scale: 2
+    t.decimal  "borrowings_2",              precision: 10, scale: 2
+    t.decimal  "borrowings_3",              precision: 10, scale: 2
+    t.decimal  "borrowings_4",              precision: 10, scale: 2
+    t.decimal  "tot_debt_0",                precision: 10, scale: 2
+    t.decimal  "tot_debt_1",                precision: 10, scale: 2
+    t.decimal  "tot_debt_2",                precision: 10, scale: 2
+    t.decimal  "tot_debt_3",                precision: 10, scale: 2
+    t.decimal  "tot_debt_4",                precision: 10, scale: 2
+    t.decimal  "minort_interest_0",         precision: 10, scale: 2
+    t.decimal  "minort_interest_1",         precision: 10, scale: 2
+    t.decimal  "minort_interest_2",         precision: 10, scale: 2
+    t.decimal  "minort_interest_3",         precision: 10, scale: 2
+    t.decimal  "minort_interest_4",         precision: 10, scale: 2
+    t.decimal  "polc_hldrs_fnds_0",         precision: 10, scale: 2
+    t.decimal  "polc_hldrs_fnds_1",         precision: 10, scale: 2
+    t.decimal  "polc_hldrs_fnds_2",         precision: 10, scale: 2
+    t.decimal  "polc_hldrs_fnds_3",         precision: 10, scale: 2
+    t.decimal  "polc_hldrs_fnds_4",         precision: 10, scale: 2
+    t.decimal  "grp_shr_jnt_vntr_0",        precision: 10, scale: 2
+    t.decimal  "grp_shr_jnt_vntr_1",        precision: 10, scale: 2
+    t.decimal  "grp_shr_jnt_vntr_2",        precision: 10, scale: 2
+    t.decimal  "grp_shr_jnt_vntr_3",        precision: 10, scale: 2
+    t.decimal  "grp_shr_jnt_vntr_4",        precision: 10, scale: 2
+    t.decimal  "othr_liabs_provsns_0",      precision: 10, scale: 2
+    t.decimal  "othr_liabs_provsns_1",      precision: 10, scale: 2
+    t.decimal  "othr_liabs_provsns_2",      precision: 10, scale: 2
+    t.decimal  "othr_liabs_provsns_3",      precision: 10, scale: 2
+    t.decimal  "othr_liabs_provsns_4",      precision: 10, scale: 2
+    t.decimal  "tot_liabs_0",               precision: 10, scale: 2
+    t.decimal  "tot_liabs_1",               precision: 10, scale: 2
+    t.decimal  "tot_liabs_2",               precision: 10, scale: 2
+    t.decimal  "tot_liabs_3",               precision: 10, scale: 2
+    t.decimal  "tot_liabs_4",               precision: 10, scale: 2
+    t.decimal  "cash_bal_rbi_0",            precision: 10, scale: 2
+    t.decimal  "cash_bal_rbi_1",            precision: 10, scale: 2
+    t.decimal  "cash_bal_rbi_2",            precision: 10, scale: 2
+    t.decimal  "cash_bal_rbi_3",            precision: 10, scale: 2
+    t.decimal  "cash_bal_rbi_4",            precision: 10, scale: 2
+    t.decimal  "bal_bank_mny_cal_0",        precision: 10, scale: 2
+    t.decimal  "bal_bank_mny_cal_1",        precision: 10, scale: 2
+    t.decimal  "bal_bank_mny_cal_2",        precision: 10, scale: 2
+    t.decimal  "bal_bank_mny_cal_3",        precision: 10, scale: 2
+    t.decimal  "bal_bank_mny_cal_4",        precision: 10, scale: 2
+    t.decimal  "advances_0",                precision: 10, scale: 2
+    t.decimal  "advances_1",                precision: 10, scale: 2
+    t.decimal  "advances_2",                precision: 10, scale: 2
+    t.decimal  "advances_3",                precision: 10, scale: 2
+    t.decimal  "advances_4",                precision: 10, scale: 2
+    t.decimal  "invstmnts_0",               precision: 10, scale: 2
+    t.decimal  "invstmnts_1",               precision: 10, scale: 2
+    t.decimal  "invstmnts_2",               precision: 10, scale: 2
+    t.decimal  "invstmnts_3",               precision: 10, scale: 2
+    t.decimal  "invstmnts_4",               precision: 10, scale: 2
+    t.decimal  "gros_block_0",              precision: 10, scale: 2
+    t.decimal  "gros_block_1",              precision: 10, scale: 2
+    t.decimal  "gros_block_2",              precision: 10, scale: 2
+    t.decimal  "gros_block_3",              precision: 10, scale: 2
+    t.decimal  "gros_block_4",              precision: 10, scale: 2
+    t.decimal  "reval_reserves_0",          precision: 10, scale: 2
+    t.decimal  "reval_reserves_1",          precision: 10, scale: 2
+    t.decimal  "reval_reserves_2",          precision: 10, scale: 2
+    t.decimal  "reval_reserves_3",          precision: 10, scale: 2
+    t.decimal  "reval_reserves_4",          precision: 10, scale: 2
+    t.decimal  "accum_deprectn_0",          precision: 10, scale: 2
+    t.decimal  "accum_deprectn_1",          precision: 10, scale: 2
+    t.decimal  "accum_deprectn_2",          precision: 10, scale: 2
+    t.decimal  "accum_deprectn_3",          precision: 10, scale: 2
+    t.decimal  "accum_deprectn_4",          precision: 10, scale: 2
+    t.decimal  "net_block_0",               precision: 10, scale: 2
+    t.decimal  "net_block_1",               precision: 10, scale: 2
+    t.decimal  "net_block_2",               precision: 10, scale: 2
+    t.decimal  "net_block_3",               precision: 10, scale: 2
+    t.decimal  "net_block_4",               precision: 10, scale: 2
+    t.decimal  "cap_wip_0",                 precision: 10, scale: 2
+    t.decimal  "cap_wip_1",                 precision: 10, scale: 2
+    t.decimal  "cap_wip_2",                 precision: 10, scale: 2
+    t.decimal  "cap_wip_3",                 precision: 10, scale: 2
+    t.decimal  "cap_wip_4",                 precision: 10, scale: 2
+    t.decimal  "other_assets_0",            precision: 10, scale: 2
+    t.decimal  "other_assets_1",            precision: 10, scale: 2
+    t.decimal  "other_assets_2",            precision: 10, scale: 2
+    t.decimal  "other_assets_3",            precision: 10, scale: 2
+    t.decimal  "other_assets_4",            precision: 10, scale: 2
+    t.decimal  "minort_interest_assets_0",  precision: 10, scale: 2
+    t.decimal  "minort_interest_assets_1",  precision: 10, scale: 2
+    t.decimal  "minort_interest_assets_2",  precision: 10, scale: 2
+    t.decimal  "minort_interest_assets_3",  precision: 10, scale: 2
+    t.decimal  "minort_interest_assets_4",  precision: 10, scale: 2
+    t.decimal  "grp_shr_jnt_vntr_assets_0", precision: 10, scale: 2
+    t.decimal  "grp_shr_jnt_vntr_assets_1", precision: 10, scale: 2
+    t.decimal  "grp_shr_jnt_vntr_assets_2", precision: 10, scale: 2
+    t.decimal  "grp_shr_jnt_vntr_assets_3", precision: 10, scale: 2
+    t.decimal  "grp_shr_jnt_vntr_assets_4", precision: 10, scale: 2
+    t.decimal  "tot_assets_0",              precision: 10, scale: 2
+    t.decimal  "tot_assets_1",              precision: 10, scale: 2
+    t.decimal  "tot_assets_2",              precision: 10, scale: 2
+    t.decimal  "tot_assets_3",              precision: 10, scale: 2
+    t.decimal  "tot_assets_4",              precision: 10, scale: 2
+    t.decimal  "contignt_liabs_0",          precision: 10, scale: 2
+    t.decimal  "contignt_liabs_1",          precision: 10, scale: 2
+    t.decimal  "contignt_liabs_2",          precision: 10, scale: 2
+    t.decimal  "contignt_liabs_3",          precision: 10, scale: 2
+    t.decimal  "contignt_liabs_4",          precision: 10, scale: 2
+    t.decimal  "bills_fr_collect_0",        precision: 10, scale: 2
+    t.decimal  "bills_fr_collect_1",        precision: 10, scale: 2
+    t.decimal  "bills_fr_collect_2",        precision: 10, scale: 2
+    t.decimal  "bills_fr_collect_3",        precision: 10, scale: 2
+    t.decimal  "bills_fr_collect_4",        precision: 10, scale: 2
+    t.decimal  "bk_val_0",                  precision: 10, scale: 2
+    t.decimal  "bk_val_1",                  precision: 10, scale: 2
+    t.decimal  "bk_val_2",                  precision: 10, scale: 2
+    t.decimal  "bk_val_3",                  precision: 10, scale: 2
+    t.decimal  "bk_val_4",                  precision: 10, scale: 2
+    t.datetime "created_at",                                         null: false
+    t.datetime "updated_at",                                         null: false
+  end
+
+  add_index "bank_balance_sheets", ["nse_script_name"], name: "index_bank_balance_sheets_on_nse_script_name"
+
+  create_table "bank_profit_losses", force: :cascade do |t|
+    t.string   "industry"
+    t.string   "isi_num",                                                 null: false
+    t.string   "nse_script_name",                                         null: false
+    t.boolean  "cur_yr_updated"
+    t.decimal  "interest_earnd_0",               precision: 10, scale: 2
+    t.decimal  "interest_earnd_1",               precision: 10, scale: 2
+    t.decimal  "interest_earnd_2",               precision: 10, scale: 2
+    t.decimal  "interest_earnd_3",               precision: 10, scale: 2
+    t.decimal  "interest_earnd_4",               precision: 10, scale: 2
+    t.decimal  "other_income_0",                 precision: 10, scale: 2
+    t.decimal  "other_income_1",                 precision: 10, scale: 2
+    t.decimal  "other_income_2",                 precision: 10, scale: 2
+    t.decimal  "other_income_3",                 precision: 10, scale: 2
+    t.decimal  "other_income_4",                 precision: 10, scale: 2
+    t.decimal  "totl_income_0",                  precision: 10, scale: 2
+    t.decimal  "totl_income_1",                  precision: 10, scale: 2
+    t.decimal  "totl_income_2",                  precision: 10, scale: 2
+    t.decimal  "totl_income_3",                  precision: 10, scale: 2
+    t.decimal  "totl_income_4",                  precision: 10, scale: 2
+    t.decimal  "interest_expended_0",            precision: 10, scale: 2
+    t.decimal  "interest_expended_1",            precision: 10, scale: 2
+    t.decimal  "interest_expended_2",            precision: 10, scale: 2
+    t.decimal  "interest_expended_3",            precision: 10, scale: 2
+    t.decimal  "interest_expended_4",            precision: 10, scale: 2
+    t.decimal  "employee_cost_0",                precision: 10, scale: 2
+    t.decimal  "employee_cost_1",                precision: 10, scale: 2
+    t.decimal  "employee_cost_2",                precision: 10, scale: 2
+    t.decimal  "employee_cost_3",                precision: 10, scale: 2
+    t.decimal  "employee_cost_4",                precision: 10, scale: 2
+    t.decimal  "selling_admin_expense_0",        precision: 10, scale: 2
+    t.decimal  "selling_admin_expense_1",        precision: 10, scale: 2
+    t.decimal  "selling_admin_expense_2",        precision: 10, scale: 2
+    t.decimal  "selling_admin_expense_3",        precision: 10, scale: 2
+    t.decimal  "selling_admin_expense_4",        precision: 10, scale: 2
+    t.decimal  "depreciation_0",                 precision: 10, scale: 2
+    t.decimal  "depreciation_1",                 precision: 10, scale: 2
+    t.decimal  "depreciation_2",                 precision: 10, scale: 2
+    t.decimal  "depreciation_3",                 precision: 10, scale: 2
+    t.decimal  "depreciation_4",                 precision: 10, scale: 2
+    t.decimal  "preoperv_exp_cap_0",             precision: 10, scale: 2
+    t.decimal  "preoperv_exp_cap_1",             precision: 10, scale: 2
+    t.decimal  "preoperv_exp_cap_2",             precision: 10, scale: 2
+    t.decimal  "preoperv_exp_cap_3",             precision: 10, scale: 2
+    t.decimal  "preoperv_exp_cap_4",             precision: 10, scale: 2
+    t.decimal  "operating_expenses_0",           precision: 10, scale: 2
+    t.decimal  "operating_expenses_1",           precision: 10, scale: 2
+    t.decimal  "operating_expenses_2",           precision: 10, scale: 2
+    t.decimal  "operating_expenses_3",           precision: 10, scale: 2
+    t.decimal  "operating_expenses_4",           precision: 10, scale: 2
+    t.decimal  "provisions_contingencies_0",     precision: 10, scale: 2
+    t.decimal  "provisions_contingencies_1",     precision: 10, scale: 2
+    t.decimal  "provisions_contingencies_2",     precision: 10, scale: 2
+    t.decimal  "provisions_contingencies_3",     precision: 10, scale: 2
+    t.decimal  "provisions_contingencies_4",     precision: 10, scale: 2
+    t.decimal  "tot_expenses_0",                 precision: 10, scale: 2
+    t.decimal  "tot_expenses_1",                 precision: 10, scale: 2
+    t.decimal  "tot_expenses_2",                 precision: 10, scale: 2
+    t.decimal  "tot_expenses_3",                 precision: 10, scale: 2
+    t.decimal  "tot_expenses_4",                 precision: 10, scale: 2
+    t.decimal  "net_profit_yr_0",                precision: 10, scale: 2
+    t.decimal  "net_profit_yr_1",                precision: 10, scale: 2
+    t.decimal  "net_profit_yr_2",                precision: 10, scale: 2
+    t.decimal  "net_profit_yr_3",                precision: 10, scale: 2
+    t.decimal  "net_profit_yr_4",                precision: 10, scale: 2
+    t.decimal  "minority_interest_0",            precision: 10, scale: 2
+    t.decimal  "minority_interest_1",            precision: 10, scale: 2
+    t.decimal  "minority_interest_2",            precision: 10, scale: 2
+    t.decimal  "minority_interest_3",            precision: 10, scale: 2
+    t.decimal  "minority_interest_4",            precision: 10, scale: 2
+    t.decimal  "share_pl_associates_0",          precision: 10, scale: 2
+    t.decimal  "share_pl_associates_1",          precision: 10, scale: 2
+    t.decimal  "share_pl_associates_2",          precision: 10, scale: 2
+    t.decimal  "share_pl_associates_3",          precision: 10, scale: 2
+    t.decimal  "share_pl_associates_4",          precision: 10, scale: 2
+    t.decimal  "net_pl_aftr_min_intr_shr_ass_0", precision: 10, scale: 2
+    t.decimal  "net_pl_aftr_min_intr_shr_ass_1", precision: 10, scale: 2
+    t.decimal  "net_pl_aftr_min_intr_shr_ass_2", precision: 10, scale: 2
+    t.decimal  "net_pl_aftr_min_intr_shr_ass_3", precision: 10, scale: 2
+    t.decimal  "net_pl_aftr_min_intr_shr_ass_4", precision: 10, scale: 2
+    t.decimal  "extraordinary_items_0",          precision: 10, scale: 2
+    t.decimal  "extraordinary_items_1",          precision: 10, scale: 2
+    t.decimal  "extraordinary_items_2",          precision: 10, scale: 2
+    t.decimal  "extraordinary_items_3",          precision: 10, scale: 2
+    t.decimal  "extraordinary_items_4",          precision: 10, scale: 2
+    t.decimal  "profit_brought_forward_0",       precision: 10, scale: 2
+    t.decimal  "profit_brought_forward_1",       precision: 10, scale: 2
+    t.decimal  "profit_brought_forward_2",       precision: 10, scale: 2
+    t.decimal  "profit_brought_forward_3",       precision: 10, scale: 2
+    t.decimal  "profit_brought_forward_4",       precision: 10, scale: 2
+    t.decimal  "total_0",                        precision: 10, scale: 2
+    t.decimal  "total_1",                        precision: 10, scale: 2
+    t.decimal  "total_2",                        precision: 10, scale: 2
+    t.decimal  "total_3",                        precision: 10, scale: 2
+    t.decimal  "total_4",                        precision: 10, scale: 2
+    t.decimal  "preference_dividend_0",          precision: 10, scale: 2
+    t.decimal  "preference_dividend_1",          precision: 10, scale: 2
+    t.decimal  "preference_dividend_2",          precision: 10, scale: 2
+    t.decimal  "preference_dividend_3",          precision: 10, scale: 2
+    t.decimal  "preference_dividend_4",          precision: 10, scale: 2
+    t.decimal  "equity_dividend_0",              precision: 10, scale: 2
+    t.decimal  "equity_dividend_1",              precision: 10, scale: 2
+    t.decimal  "equity_dividend_2",              precision: 10, scale: 2
+    t.decimal  "equity_dividend_3",              precision: 10, scale: 2
+    t.decimal  "equity_dividend_4",              precision: 10, scale: 2
+    t.decimal  "corporate_dividend_tax_0",       precision: 10, scale: 2
+    t.decimal  "corporate_dividend_tax_1",       precision: 10, scale: 2
+    t.decimal  "corporate_dividend_tax_2",       precision: 10, scale: 2
+    t.decimal  "corporate_dividend_tax_3",       precision: 10, scale: 2
+    t.decimal  "corporate_dividend_tax_4",       precision: 10, scale: 2
+    t.decimal  "eps_0",                          precision: 10, scale: 2
+    t.decimal  "eps_1",                          precision: 10, scale: 2
+    t.decimal  "eps_2",                          precision: 10, scale: 2
+    t.decimal  "eps_3",                          precision: 10, scale: 2
+    t.decimal  "eps_4",                          precision: 10, scale: 2
+    t.decimal  "equity_dividend_perc_0",         precision: 10, scale: 2
+    t.decimal  "equity_dividend_perc_1",         precision: 10, scale: 2
+    t.decimal  "equity_dividend_perc_2",         precision: 10, scale: 2
+    t.decimal  "equity_dividend_perc_3",         precision: 10, scale: 2
+    t.decimal  "equity_dividend_perc_4",         precision: 10, scale: 2
+    t.decimal  "book_value_0",                   precision: 10, scale: 2
+    t.decimal  "book_value_1",                   precision: 10, scale: 2
+    t.decimal  "book_value_2",                   precision: 10, scale: 2
+    t.decimal  "book_value_3",                   precision: 10, scale: 2
+    t.decimal  "book_value_4",                   precision: 10, scale: 2
+    t.decimal  "trns_statut_rserv_0",            precision: 10, scale: 2
+    t.decimal  "trns_statut_rserv_1",            precision: 10, scale: 2
+    t.decimal  "trns_statut_rserv_2",            precision: 10, scale: 2
+    t.decimal  "trns_statut_rserv_3",            precision: 10, scale: 2
+    t.decimal  "trns_statut_rserv_4",            precision: 10, scale: 2
+    t.decimal  "trns_othr_rserv_0",              precision: 10, scale: 2
+    t.decimal  "trns_othr_rserv_1",              precision: 10, scale: 2
+    t.decimal  "trns_othr_rserv_2",              precision: 10, scale: 2
+    t.decimal  "trns_othr_rserv_3",              precision: 10, scale: 2
+    t.decimal  "trns_othr_rserv_4",              precision: 10, scale: 2
+    t.decimal  "propsd_dvdend_trans_govt_0",     precision: 10, scale: 2
+    t.decimal  "propsd_dvdend_trans_govt_1",     precision: 10, scale: 2
+    t.decimal  "propsd_dvdend_trans_govt_2",     precision: 10, scale: 2
+    t.decimal  "propsd_dvdend_trans_govt_3",     precision: 10, scale: 2
+    t.decimal  "propsd_dvdend_trans_govt_4",     precision: 10, scale: 2
+    t.decimal  "bal_cf_bal_sheet_0",             precision: 10, scale: 2
+    t.decimal  "bal_cf_bal_sheet_1",             precision: 10, scale: 2
+    t.decimal  "bal_cf_bal_sheet_2",             precision: 10, scale: 2
+    t.decimal  "bal_cf_bal_sheet_3",             precision: 10, scale: 2
+    t.decimal  "bal_cf_bal_sheet_4",             precision: 10, scale: 2
+    t.datetime "created_at",                                              null: false
+    t.datetime "updated_at",                                              null: false
+  end
+
+  add_index "bank_profit_losses", ["nse_script_name"], name: "index_bank_profit_losses_on_nse_script_name"
 
   create_table "day_tradings", force: :cascade do |t|
     t.string   "isi_num",                                         null: false

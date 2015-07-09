@@ -19,6 +19,16 @@ def show
 	#@npm_chart=line_chart('Net Profit Margin',@ratios_and_analyses.net_proft_margn_0,@ratios_and_analyses.net_proft_margn_1,@ratios_and_analyses.net_proft_margn_2,@ratios_and_analyses.net_proft_margn_3,@ratios_and_analyses.net_proft_margn_4,'Profitable Ratios- NPM')
 end
 
+def update_bonus_share
+    # any increase in nuber of shares
+    # any decrease in the share price
+    # need to create a table and form for update  bonus ratio    
+end
+
+def update_split
+    # how about having the same table for bonus, split, yearly_dividend
+
+end
 =begin
 def trading_details
 # Display details from Daytrading table.
