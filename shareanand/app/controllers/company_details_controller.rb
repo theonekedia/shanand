@@ -4,13 +4,18 @@ class CompanyDetailsController < ApplicationController
 
 def show
 	@day_trading = DayTrading.find_by_nse_script_name(params[:nse_script_name])
-	@script_meta_datum = ScriptMetaDatum.find_by_nse_script_name(params[:nse_script_name])
+	@comp_industry=DayTrading.where(:nse_script_name => params[:nse_script_name]).pluck(:industry)
+    @compititors= DayTrading.where(:industry => @comp_industry)
+    @ratios_and_analyses = RatiosAndAnalysis.where(:industry => @comp_industry)
+
+
+    #@script_meta_datum = ScriptMetaDatum.find_by_nse_script_name(params[:nse_script_name])
 	#@ratios_and_analyses = RatiosAndAnalysis.find_by_nse_script_name(params[:nse_script_name])
-	@comp_industry=ScriptMetaDatum.find_by_nse_script_name(params[:nse_script_name]).industry
-	@compititors= ScriptMetaDatum.where(:industry => @comp_industry)
-	compititors_array=ScriptMetaDatum.where(:industry => @comp_industry).pluck(:nse_script_name)
+	#@comp_industry=ScriptMetaDatum.where(:nse_script_name => params[:nse_script_name]).pluck(:industry)
+	#@compititors= ScriptMetaDatum.where(:industry => @comp_industry)
+	#compititors_array=ScriptMetaDatum.where(:industry => @comp_industry).pluck(:nse_script_name)
 	#compititors_array.each do |compititor|
-	@ratios_and_analyses = RatiosAndAnalysis.where("nse_script_name IN (?)", compititors_array).order(sort_column + " " + sort_direction).limit(5).to_a
+	#@ratios_and_analyses = RatiosAndAnalysis.where("nse_script_name IN (?)", compititors_array).order(sort_column + " " + sort_direction).to_a
 	#@ratios_and_analyses = RatiosAndAnalysis.where(:nse_script_name => params[compititors_array])
 	#@ratios_and_analyses = RatiosAndAnalysis.where(':nse_script_name => #{compititors_array}')
 

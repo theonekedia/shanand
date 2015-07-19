@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150707175535) do
+ActiveRecord::Schema.define(version: 20150719174046) do
 
   create_table "balance_sheets", force: :cascade do |t|
     t.string   "industry"
@@ -511,6 +511,50 @@ ActiveRecord::Schema.define(version: 20150707175535) do
 
   add_index "bank_profit_losses", ["nse_script_name"], name: "index_bank_profit_losses_on_nse_script_name"
 
+  create_table "cash_flow_statements", force: :cascade do |t|
+    t.string  "industry"
+    t.string  "isi_num",                                            null: false
+    t.string  "nse_script_name",                                    null: false
+    t.string  "last_updated_year"
+    t.decimal "net_profit_bfr_tax_0",      precision: 10, scale: 2
+    t.decimal "net_profit_bfr_tax_1",      precision: 10, scale: 2
+    t.decimal "net_profit_bfr_tax_2",      precision: 10, scale: 2
+    t.decimal "net_profit_bfr_tax_3",      precision: 10, scale: 2
+    t.decimal "net_profit_bfr_tax_4",      precision: 10, scale: 2
+    t.decimal "net_cash_4m_operating_0",   precision: 10, scale: 2
+    t.decimal "net_cash_4m_operating_1",   precision: 10, scale: 2
+    t.decimal "net_cash_4m_operating_2",   precision: 10, scale: 2
+    t.decimal "net_cash_4m_operating_3",   precision: 10, scale: 2
+    t.decimal "net_cash_4m_operating_4",   precision: 10, scale: 2
+    t.decimal "net_cash_investing_0",      precision: 10, scale: 2
+    t.decimal "net_cash_investing_1",      precision: 10, scale: 2
+    t.decimal "net_cash_investing_2",      precision: 10, scale: 2
+    t.decimal "net_cash_investing_3",      precision: 10, scale: 2
+    t.decimal "net_cash_investing_4",      precision: 10, scale: 2
+    t.decimal "net_cash_financing_0",      precision: 10, scale: 2
+    t.decimal "net_cash_financing_1",      precision: 10, scale: 2
+    t.decimal "net_cash_financing_2",      precision: 10, scale: 2
+    t.decimal "net_cash_financing_3",      precision: 10, scale: 2
+    t.decimal "net_cash_financing_4",      precision: 10, scale: 2
+    t.decimal "net_chng_in_cash_equivs_0", precision: 10, scale: 2
+    t.decimal "net_chng_in_cash_equivs_1", precision: 10, scale: 2
+    t.decimal "net_chng_in_cash_equivs_2", precision: 10, scale: 2
+    t.decimal "net_chng_in_cash_equivs_3", precision: 10, scale: 2
+    t.decimal "net_chng_in_cash_equivs_4", precision: 10, scale: 2
+    t.decimal "opening_cash_equivs_0",     precision: 10, scale: 2
+    t.decimal "opening_cash_equivs_1",     precision: 10, scale: 2
+    t.decimal "opening_cash_equivs_2",     precision: 10, scale: 2
+    t.decimal "opening_cash_equivs_3",     precision: 10, scale: 2
+    t.decimal "opening_cash_equivs_4",     precision: 10, scale: 2
+    t.decimal "closing_cash_equivs_0",     precision: 10, scale: 2
+    t.decimal "closing_cash_equivs_1",     precision: 10, scale: 2
+    t.decimal "closing_cash_equivs_2",     precision: 10, scale: 2
+    t.decimal "closing_cash_equivs_3",     precision: 10, scale: 2
+    t.decimal "closing_cash_equivs_4",     precision: 10, scale: 2
+  end
+
+  add_index "cash_flow_statements", ["nse_script_name"], name: "cash_flow_statements_on_nse_script_name", unique: true
+
   create_table "day_tradings", force: :cascade do |t|
     t.string   "isi_num",                                         null: false
     t.string   "nse_script_name",                                 null: false
@@ -529,6 +573,9 @@ ActiveRecord::Schema.define(version: 20150707175535) do
     t.decimal  "market_cap",             precision: 10, scale: 2
     t.decimal  "tot_outstanding_shares", precision: 10, scale: 2
     t.decimal  "pe_ratio",               precision: 10, scale: 2
+    t.decimal  "f2_week_low",            precision: 10, scale: 2
+    t.decimal  "f2_week_high",           precision: 10, scale: 2
+    t.string   "industry"
   end
 
   add_index "day_tradings", ["nse_script_name"], name: "index_day_tradings_on_nse_script_name"
@@ -542,6 +589,34 @@ ActiveRecord::Schema.define(version: 20150707175535) do
   end
 
   add_index "identities", ["user_id"], name: "index_identities_on_user_id"
+
+  create_table "industry_details", force: :cascade do |t|
+    t.string   "industry"
+    t.text     "info"
+    t.string   "bse_index"
+    t.decimal  "avg_pe",                          precision: 10, scale: 2
+    t.decimal  "avg_eps",                         precision: 10, scale: 2
+    t.decimal  "avg_gross_profit_margin",         precision: 10, scale: 2
+    t.decimal  "avg_oper_profit_margn",           precision: 10, scale: 2
+    t.decimal  "avg_net_proft_margn",             precision: 10, scale: 2
+    t.decimal  "avg_current_ratio",               precision: 10, scale: 2
+    t.decimal  "avg_turnover_ratio",              precision: 10, scale: 2
+    t.decimal  "avg_assets_turnover_ratio",       precision: 10, scale: 2
+    t.decimal  "avg_fixed_charge_coverage_ratio", precision: 10, scale: 2
+    t.decimal  "avg_interest_coverage_ratio",     precision: 10, scale: 2
+    t.decimal  "avg_dividend_coverage_ratio",     precision: 10, scale: 2
+    t.decimal  "avg_debt_equity_ratio",           precision: 10, scale: 2
+    t.decimal  "avg_debt_assets_ratio",           precision: 10, scale: 2
+    t.decimal  "avg_return_on_asset",             precision: 10, scale: 2
+    t.decimal  "avg_return_on_capital_employed",  precision: 10, scale: 2
+    t.decimal  "avg_return_on_networth",          precision: 10, scale: 2
+    t.decimal  "avg_return_on_equity",            precision: 10, scale: 2
+    t.decimal  "avg_debt_Ratio",                  precision: 10, scale: 2
+    t.datetime "created_at",                                               null: false
+    t.datetime "updated_at",                                               null: false
+  end
+
+  add_index "industry_details", ["industry"], name: "index_industry_details_on_industry", unique: true
 
   create_table "profit_and_losses", force: :cascade do |t|
     t.string   "industry"

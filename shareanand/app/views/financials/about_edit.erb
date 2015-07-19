@@ -1,7 +1,12 @@
 <p id="notice"><%= notice %></p>
 <% bool = ["BANKS - PUBLIC SECTOR", "BANKS - PRIVATE SECTOR", "FINANCE - INVESTMENTS", "FINANCE - GENERAL", "FINANCE - HOUSING", "FINANCE - LEASING & HIRE PURCHASE","FINANCE - TERM LENDING INSTITUTIONS"].include?(@profit_and_loss.industry) %>
+	
+
 <% if bool == true %>
-	<%= render 'bank_profit_loss' %>
+	<%= render 'update_bank_financials' %>
 <% else %>
- 	<%= render 'prft_loss' %>
+ 	<%= render 'update_financial_details' %>
 <% end %>
+
+
+<%#= render 'update_bank_bal_sheet' %>

@@ -4,7 +4,7 @@ class ScriptMetaDataController < ApplicationController
   # GET /script_meta_data
   # GET /script_meta_data.json
   def index
-    @script_meta_data = ScriptMetaDatum.all
+    @script_meta_data = ScriptMetaDatum.all.paginate(page: params[:page], per_page: 30)
   end
 
   # GET /script_meta_data/1

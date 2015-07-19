@@ -2,7 +2,7 @@
 
 <div class="col-md-5">
 	<h3> Balance Sheet</h3>
-<%=form_for(@balance_sheet) do |f| %>
+<%=form_for @balance_sheet ,:url => url_for(:controller => 'financials', :action => 'update') do |f| %>
 	
 	<div class="form-group">
         <%= f.label     :tot_shr_cap_0, "Total Caital Share", class: "col-sm-8" %>
@@ -240,7 +240,7 @@
 <div class="col-md-5">
 <h3> Profit and Loss</h3>
 
-<%=form_for(@profit_and_loss) do |f| %>
+<%=form_for @profit_and_loss,:url => url_for(:controller => 'financials', :action => 'update')  do |f| %>
 	  
 	<div class="form-group">
 		<%= f.label     :sal_turnovr_0 , "Sales Turnover", class: "col-sm-8" %>
@@ -476,6 +476,7 @@
 
 <%= f.submit "update", class: "btn btn-default btn-primary" %>
 <% end %>
+
 </div>
 
 

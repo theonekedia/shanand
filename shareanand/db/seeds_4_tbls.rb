@@ -8,11 +8,36 @@
 #require 'nokogiri'
 #require 'open-uri'
 
-main_url='http://www.moneycontrol.com/stocks/marketinfo/marketcap/nse/index.html'
-fil=File.open('/home/sradhu/BRM/Shareanand_rough/log_seeds.txt',"a")
-v_book_value = nil
-v_eps = nil
-index_doc = Nokogiri::HTML(open(main_url))
+
+fil=File.open('/home/sradhu/BRM/Shareanand_rough/log_all_moneycontrol.txt',"a")
+main_url=['http://www.moneycontrol.com/stocks/top-companies-in-india/market-capitalisation-nse/construction-contracting-real-estate.html
+http://www.moneycontrol.com/stocks/top-companies-in-india/market-capitalisation-nse/consumer-goods-electronic.html
+http://www.moneycontrol.com/stocks/top-companies-in-india/market-capitalisation-nse/consumer-goods-white-goods.html
+http://www.moneycontrol.com/stocks/top-companies-in-india/market-capitalisation-nse/couriers.html
+http://www.moneycontrol.com/stocks/top-companies-in-india/market-capitalisation-nse/detergents.html
+http://www.moneycontrol.com/stocks/top-companies-in-india/market-capitalisation-nse/diamond-cutting-jewellery-precious-metals.html
+http://www.moneycontrol.com/stocks/top-companies-in-india/market-capitalisation-nse/diversified.html
+http://www.moneycontrol.com/stocks/top-companies-in-india/market-capitalisation-nse/domestic-appliances.html
+http://www.moneycontrol.com/stocks/top-companies-in-india/market-capitalisation-nse/dry-cells.html
+http://www.moneycontrol.com/stocks/top-companies-in-india/market-capitalisation-nse/dyes-pigments.html
+http://www.moneycontrol.com/stocks/top-companies-in-india/market-capitalisation-nse/edible-oils-solvent-extraction.html
+http://www.moneycontrol.com/stocks/top-companies-in-india/market-capitalisation-nse/electric-equipment.html
+http://www.moneycontrol.com/stocks/top-companies-in-india/market-capitalisation-nse/electricals.html
+http://www.moneycontrol.com/stocks/top-companies-in-india/market-capitalisation-nse/electrodes-graphite.html
+http://www.moneycontrol.com/stocks/top-companies-in-india/market-capitalisation-nse/engineering.html
+http://www.moneycontrol.com/stocks/top-companies-in-india/market-capitalisation-nse/engineering-heavy.html
+http://www.moneycontrol.com/stocks/top-companies-in-india/market-capitalisation-nse/engines.html
+http://www.moneycontrol.com/stocks/top-companies-in-india/market-capitalisation-nse/fasteners.html
+http://www.moneycontrol.com/stocks/top-companies-in-india/market-capitalisation-nse/fertilisers.html']
+
+#index_doc = Nokogiri::HTML(open(main_url))
+#left_menu=index_doc.xpath('//div[@class="lftmenu"]/ul/li/a')
+#left_menu.each do |left_lnk| 
+#list_html='http://www.moneycontrol.com' + left_lnk["href"]
+
+
+main_url.each do |list_html|
+index_doc = Nokogiri::HTML(open(list_html))
 # get the table of company names and links.
 links_page=index_doc.xpath('//table[@class="tbldata14 bdrtpg"]/tr/td[1]/a')
 links_page.each do |lnk| 
@@ -22,6 +47,8 @@ fil.puts html
 #Opens the page of each company from above list.
 doc = Nokogiri::HTML(open(html))
 
+v_book_value = nil
+v_eps = nil
 #meta_tbl values
 prim_values = doc.xpath('//div[@class="FL gry10"]/text()')
 mt_detl={}
@@ -59,7 +86,7 @@ if ScriptMetaDatum.find_by_nse_script_name(mt_detl["NSE"]).nil?
 
 script_meta_datum = ScriptMetaDatum.new
 script_meta_datum.isi_num=mt_detl["ISIN"]
-script_meta_datum.bse_script_numb=mt_detl["BSE"]
+script_meta_datum.bse_script_numb=mt_detl["BSE"].nil? ? "Empty" : mt_detl["BSE"]
 script_meta_datum.nse_script_name=mt_detl["NSE"]	
 script_meta_datum.industry=script_industry
 script_meta_datum.company_display_name=mt_detl["NSE"]
@@ -637,7 +664,7 @@ end
 profit_and_loss.save
 
 fil.puts "profit-loss is saved"
-script_meta_datum.graham_fvp= Math.sqrt(22.5 * v_book_value * v_eps)
+script_meta_datum.graham_fvp= (v_book_value.nil? || v_eps.nil?) ? nil : Math.sqrt(22.5 * v_book_value * v_eps)
 script_meta_datum.save	
 
 # One Time update
@@ -659,11 +686,12 @@ script_meta_datum.save
 #    t.decimal  "today_low",         precision: 10, scale: 2
 #  	 t.decimal  "market_cap", 			# Number of Out standing shares * share Price # It is better to be in DayTrading.
 
-daytrading.graham_fvp= Math.sqrt(22.5 * v_book_value * v_eps)
+daytrading.graham_fvp= (v_book_value.nil? || v_eps.nil?) ? nil : Math.sqrt(22.5 * v_book_value * v_eps)
 
 daytrading.save
 
 else
 next
+end
 end
 end

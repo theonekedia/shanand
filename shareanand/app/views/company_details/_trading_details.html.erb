@@ -9,14 +9,17 @@
         <p>Close       : <%= @day_trading.today_close %></p>
         <p>Prev.Close  : <%= @day_trading.pre_day_close %></p>
         <p>% Change    : <%= @day_trading.perc_change %></p>
+        <p>Industry    : <%= @day_trading.industry %></p>
+       
+        
 </div>        
 <div class="col-md-4">
         <p>Graham Value: <%= @day_trading.graham_fvp.round(2) %></p>
         <p>EPS         : <%= @day_trading.eps %></p>
         <p>P/E         : <%= @day_trading.pe_ratio.round(2) %></p>
         <p>Book Value  : <%= @day_trading.book_value %></p>
-        <p>52 Week High: <%= @script_meta_datum.f2_week_high.round(2) %></p>
-        <p>52 Week Low : <%= @script_meta_datum.f2_week_low.round(2) %></p>
+        <p>52 Week High: <%= @day_trading.f2_week_high.round(2) %></p>
+        <p>52 Week Low : <%= @day_trading.f2_week_low.round(2) %></p>
         <p>Volume      : <%= @day_trading.tot_shares_traded %></p>
         
 

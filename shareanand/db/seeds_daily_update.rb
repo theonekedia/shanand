@@ -1,6 +1,6 @@
 require 'csv'
 
-csv_file= '/home/sradhu/MyProject/Source_code/shareanand/content/nse_bhav_copy/2015/July/CSV/cm08JUL2015bhav.csv'
+csv_file= '/home/sradhu/MyProject/Source_code/shareanand/content/nse_bhav_copy/2015/July/CSV/cm16JUL2015bhav.csv'
 search_arr=DayTrading.uniq.pluck(:nse_script_name)
 
 #for each value find the row in csv file

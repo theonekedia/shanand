@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h2> Company Deatils of <%= @script_meta_datum.nse_script_name %></h2>
+<h2> Company Deatils of <%= @day_trading.nse_script_name %></h2>
 <div class="col-md-2">
-		<p><%= link_to "Update Financial Details", update_cur_yr_financials_path %></p>
+		<p><%= link_to "Update Financial Details", edit_financial_path %></p>
 		<p><%= link_to "Balance Sheet", show_balance_sheet_path %></p>
 		<p><%= link_to "Profit and Loss", show_profit_loss_path %></p>
 		<p><%= link_to "Ratios and Analysis", ratios_and_analysis_path %></p>

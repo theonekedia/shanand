@@ -70,8 +70,8 @@ search_arr=DayTrading.uniq.pluck(:nse_script_name)
      arra= data[symb]
      next if arra.nil?
      arra.map!{|v| v.to_s}   
-    
-    DayTrading.find(symb).update({    
+    fil.puts symb
+    DayTrading.find(symb).update( 
 :today_open => arra[2].to_f,
 :today_high => arra[3].to_f,
 :today_low => arra[4].to_f,
@@ -79,7 +79,7 @@ search_arr=DayTrading.uniq.pluck(:nse_script_name)
 :pre_day_close => arra[7].to_f,	 
 :tot_shares_traded => arra[8].to_f,
 :perc_change => (arra[5].to_f - arra[7].to_f) * 100 / arra[7].to_f
-})
+)
 end
 end  # funct update_table ends here
 

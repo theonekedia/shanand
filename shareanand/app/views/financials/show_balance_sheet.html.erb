@@ -1,3 +1,8 @@
 <h3>Balance Sheet of <%= @balance_sheet.nse_script_name %> </h3>
 
-<%= render 'bal_sheet' %>
+<%# bool = ["BANKS - PUBLIC SECTOR", "BANKS - PRIVATE SECTOR", "FINANCE - INVESTMENTS", "FINANCE - GENERAL", "FINANCE - HOUSING", "FINANCE - LEASING & HIRE PURCHASE","FINANCE - TERM LENDING INSTITUTIONS"].include?(@balance_sheet.industry) %>
+<% if @industry_group == "FINANCE" %>
+	<%= render 'bank_bal_sheet' %>
+<% else %>
+	<%= render 'bal_sheet' %>
+<% end %>

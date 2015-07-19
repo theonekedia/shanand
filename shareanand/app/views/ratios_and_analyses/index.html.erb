@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Ratios And Analyses </h1>  <h6>in Percentages</h6>
-
+<%= will_paginate @ratios_and_analyses %>
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
@@ -29,7 +29,7 @@
 		<td><%= ratios_and_analysis.oper_profit_margn_0.round(2) %></td>
 		<td><%= ratios_and_analysis.net_proft_margn_0.round(2) %></td>
 		<td><%= ratios_and_analysis.eps_0.round(2) %></td>
-		<td><%= ratios_and_analysis.fixed_charge_coverage_ratio_0 %></td>
+<td><%= ratios_and_analysis.fixed_charge_coverage_ratio_0.nil? ? nil : ratios_and_analysis.fixed_charge_coverage_ratio_0.round(2) %></td>
 		
 		<td><%= ratios_and_analysis.return_on_asset_0.round(2) %></td>
 		<td><%= ratios_and_analysis.return_on_equity_0.round(2) %></td>
@@ -40,5 +40,5 @@
     <% end %>
   </tbody>
 </table>
-
+<%= will_paginate @ratios_and_analyses %>
 <br>

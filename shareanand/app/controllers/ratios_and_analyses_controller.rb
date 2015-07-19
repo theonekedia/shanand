@@ -5,7 +5,7 @@ class RatiosAndAnalysesController < ApplicationController
   # GET /ratios_and_analyses
   # GET /ratios_and_analyses.json
   def index
-    @ratios_and_analyses = RatiosAndAnalysis.order(sort_column + " " + sort_direction)
+    @ratios_and_analyses = RatiosAndAnalysis.order(sort_column + " " + sort_direction).paginate(page: params[:page], per_page: 30)
   end
 
   # GET /ratios_and_analyses/1

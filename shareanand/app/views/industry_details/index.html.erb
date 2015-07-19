@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Industry Details</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @industry_details.each do |industry_detail| %>
+      <tr>
+        <td><%= link_to 'Show', industry_detail %></td>
+        <td><%= link_to 'Edit', edit_industry_detail_path(industry_detail) %></td>
+        <td><%= link_to 'Destroy', industry_detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Industry detail', new_industry_detail_path %>

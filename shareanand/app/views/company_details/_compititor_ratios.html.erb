@@ -27,8 +27,7 @@
 		<td><%= ratios_and_analysis.oper_profit_margn_0.round(2) %></td>
 		<td><%= ratios_and_analysis.net_proft_margn_0.round(2) %></td>
 		<td><%= ratios_and_analysis.eps_0.round(2) %></td>
-		<td><%= ratios_and_analysis.fixed_charge_coverage_ratio_0 %></td>
-		
+		<td><%= ratios_and_analysis.fixed_charge_coverage_ratio_0.nil? ? nil : ratios_and_analysis.fixed_charge_coverage_ratio_0.round(2) %></td>
 		<td><%= ratios_and_analysis.return_on_asset_0.round(2) %></td>
 		<td><%= ratios_and_analysis.return_on_equity_0.round(2) %></td>
 		<td><%= (ratios_and_analysis.debt_Ratio_0 * 100).round(2) %></td>

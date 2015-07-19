@@ -1,0 +1,342 @@
+<!--/view/show_balance_sheet.html.erb !-->
+
+<!--/view/_bank_bal_sheet.html.erb !-->
+<table class="table table-striped table-bordered">
+<thead>
+    <tr>
+    
+    
+    </tr>
+  </thead>
+<tbody><tr height="22px">
+		<td colspan="1" class="detb" width="40%"></td>
+								
+								<td align="middle" class="detb">Mar '14</td>
+								<td align="middle" class="detb">Mar '13</td>
+								<td align="middle" class="detb">Mar '12</td>
+								<td align="middle" class="detb">Mar '11</td>
+								<td align="middle" class="detb">Mar '10</td>
+				</tr>
+			
+	<tr height="22px">
+<td colspan="1" >Total Share Capital</td>
+<td align="right" ><%= @balance_sheet.tot_shr_cap_0 %></td>
+<td align="right" ><%= @balance_sheet.tot_shr_cap_1 %></td>
+<td align="right" ><%= @balance_sheet.tot_shr_cap_2 %></td>
+<td align="right" ><%= @balance_sheet.tot_shr_cap_3 %></td>
+<td align="right" ><%= @balance_sheet.tot_shr_cap_4 %></td>
+	</tr>
+			<tr height="22px">
+
+<td colspan="1" >Equity Share Capital</td>
+<td align="right" ><%= @balance_sheet.eq_shr_cap_0 %></td>
+<td align="right" ><%= @balance_sheet.eq_shr_cap_1 %></td>
+<td align="right" ><%= @balance_sheet.eq_shr_cap_2 %></td>
+<td align="right" ><%= @balance_sheet.eq_shr_cap_3 %></td>
+<td align="right" ><%= @balance_sheet.eq_shr_cap_4 %></td>
+	</tr>
+			<tr height="22px">
+
+<td colspan="1" >Share Application Money</td>
+<td align="right" ><%= @balance_sheet.shr_appl_mny_0 %></td>
+<td align="right" ><%= @balance_sheet.shr_appl_mny_1 %></td>
+<td align="right" ><%= @balance_sheet.shr_appl_mny_2 %></td>
+<td align="right" ><%= @balance_sheet.shr_appl_mny_3 %></td>
+<td align="right" ><%= @balance_sheet.shr_appl_mny_4 %></td>
+	</tr>
+			<tr height="22px">
+
+<td colspan="1" >Preference Share Capital</td>
+<td align="right" ><%= @balance_sheet.pre_shr_cap_0 %></td>
+<td align="right" ><%= @balance_sheet.pre_shr_cap_1 %></td>
+<td align="right" ><%= @balance_sheet.pre_shr_cap_2 %></td>
+<td align="right" ><%= @balance_sheet.pre_shr_cap_3 %></td>
+<td align="right" ><%= @balance_sheet.pre_shr_cap_4 %></td>
+	</tr>
+			<tr height="22px">
+
+<td colspan="1" >Init. Contribution Settler</td>
+<td align="right" ><%= @balance_sheet.init_cntrb_stlr_0 %></td>
+<td align="right" ><%= @balance_sheet.init_cntrb_stlr_1 %></td>
+<td align="right" ><%= @balance_sheet.init_cntrb_stlr_2 %></td>
+<td align="right" ><%= @balance_sheet.init_cntrb_stlr_3 %></td>
+<td align="right" ><%= @balance_sheet.init_cntrb_stlr_4 %></td>
+	</tr>
+			<tr height="22px">
+
+<td colspan="1" >Preference Share Application Money</td>
+<td align="right" ><%= @balance_sheet.pref_shr_appln_mny_0 %></td>
+<td align="right" ><%= @balance_sheet.pref_shr_appln_mny_1 %></td>
+<td align="right" ><%= @balance_sheet.pref_shr_appln_mny_2 %></td>
+<td align="right" ><%= @balance_sheet.pref_shr_appln_mny_3 %></td>
+<td align="right" ><%= @balance_sheet.pref_shr_appln_mny_4 %></td>
+	</tr>
+			<tr height="22px">
+
+<td colspan="1" >Employee Stock Opiton </td>
+<td align="right" ><%= @balance_sheet.emply_stck_optn_0 %></td>
+<td align="right" ><%= @balance_sheet.emply_stck_optn_1 %></td>
+<td align="right" ><%= @balance_sheet.emply_stck_optn_2 %></td>
+<td align="right" ><%= @balance_sheet.emply_stck_optn_3 %></td>
+<td align="right" ><%= @balance_sheet.emply_stck_optn_4 %></td>
+	</tr>
+			<tr height="22px">
+
+<td colspan="1" >Reserves</td>
+<td align="right" ><%= @balance_sheet.reserves_0 %></td>
+<td align="right" ><%= @balance_sheet.reserves_1 %></td>
+<td align="right" ><%= @balance_sheet.reserves_2 %></td>
+<td align="right" ><%= @balance_sheet.reserves_3 %></td>
+<td align="right" ><%= @balance_sheet.reserves_4 %></td>
+	</tr>
+			<tr height="22px">
+
+<td colspan="1" >Net Worth</td>
+<td align="right" ><%= @balance_sheet.networth_0 %></td>
+<td align="right" ><%= @balance_sheet.networth_1 %></td>
+<td align="right" ><%= @balance_sheet.networth_2 %></td>
+<td align="right" ><%= @balance_sheet.networth_3 %></td>
+<td align="right" ><%= @balance_sheet.networth_4 %></td>
+	</tr>
+			<tr height="22px">
+
+<td colspan="1" >Deposits</td>
+<td align="right" ><%= @balance_sheet.deposits_0 %></td>
+<td align="right" ><%= @balance_sheet.deposits_1 %></td>
+<td align="right" ><%= @balance_sheet.deposits_2 %></td>
+<td align="right" ><%= @balance_sheet.deposits_3 %></td>
+<td align="right" ><%= @balance_sheet.deposits_4 %></td>
+	</tr>
+			<tr height="22px">
+
+<td colspan="1" >Borrowings</td>
+<td align="right" ><%= @balance_sheet.borrowings_0 %></td>
+<td align="right" ><%= @balance_sheet.borrowings_1 %></td>
+<td align="right" ><%= @balance_sheet.borrowings_2 %></td>
+<td align="right" ><%= @balance_sheet.borrowings_3 %></td>
+<td align="right" ><%= @balance_sheet.borrowings_4 %></td>
+	</tr>
+			<tr height="22px">
+
+
+<td colspan="1" >Total Debt</td>
+<td align="right" ><%= @balance_sheet.tot_debt_0 %></td>
+<td align="right" ><%= @balance_sheet.tot_debt_1 %></td>
+<td align="right" ><%= @balance_sheet.tot_debt_2 %></td>
+<td align="right" ><%= @balance_sheet.tot_debt_3 %></td>
+<td align="right" ><%= @balance_sheet.tot_debt_4 %></td>
+	</tr>
+			<tr height="22px">
+
+
+<td colspan="1" >Minority Interest</td>
+<td align="right" ><%= @balance_sheet.minort_interest_0 %></td>
+<td align="right" ><%= @balance_sheet.minort_interest_1 %></td>
+<td align="right" ><%= @balance_sheet.minort_interest_2 %></td>
+<td align="right" ><%= @balance_sheet.minort_interest_3 %></td>
+<td align="right" ><%= @balance_sheet.minort_interest_4 %></td>
+
+	</tr>
+			<tr height="22px">
+
+
+<td colspan="1" >Policy Holders Funds</td>
+<td align="right" ><%= @balance_sheet.polc_hldrs_fnds_0 %></td>	
+<td align="right" ><%= @balance_sheet.polc_hldrs_fnds_1 %></td>
+<td align="right" ><%= @balance_sheet.polc_hldrs_fnds_2 %></td>
+<td align="right" ><%= @balance_sheet.polc_hldrs_fnds_3 %></td>
+<td align="right" ><%= @balance_sheet.polc_hldrs_fnds_4 %></td>
+
+	</tr>
+			<tr height="22px">
+
+
+<td colspan="1" >Group Share in Joint Venture</td>
+<td align="right" ><%= @balance_sheet.grp_shr_jnt_vntr_0 %></td>
+<td align="right" ><%= @balance_sheet.grp_shr_jnt_vntr_1 %></td>
+<td align="right" ><%= @balance_sheet.grp_shr_jnt_vntr_2 %></td>
+<td align="right" ><%= @balance_sheet.grp_shr_jnt_vntr_3 %></td>
+<td align="right" ><%= @balance_sheet.grp_shr_jnt_vntr_4 %></td>
+
+	</tr>
+			<tr height="22px">
+
+<td colspan="1" >Other Liabilities &amp; Provisions</td>
+<td align="right" ><%= @balance_sheet.othr_liabs_provsns_0 %></td>
+<td align="right" ><%= @balance_sheet.othr_liabs_provsns_1 %></td>
+<td align="right" ><%= @balance_sheet.othr_liabs_provsns_2 %></td>
+<td align="right" ><%= @balance_sheet.othr_liabs_provsns_3 %></td>
+<td align="right" ><%= @balance_sheet.othr_liabs_provsns_4 %></td>
+
+	</tr>
+			<tr height="22px">
+
+
+<td colspan="1" >Total Liabilities</td>
+<td align="right" ><%= @balance_sheet.tot_liabs_0 %></td>
+<td align="right" ><%= @balance_sheet.tot_liabs_1 %></td>
+<td align="right" ><%= @balance_sheet.tot_liabs_2 %></td>
+<td align="right" ><%= @balance_sheet.tot_liabs_3 %></td>
+<td align="right" ><%= @balance_sheet.tot_liabs_4 %></td>
+	</tr>
+			<tr height="22px">
+
+<td colspan="1" >Cash &amp; Balances with RBI</td>
+<td align="right" ><%= @balance_sheet.cash_bal_rbi_0 %></td>
+<td align="right" ><%= @balance_sheet.cash_bal_rbi_1 %></td>
+<td align="right" ><%= @balance_sheet.cash_bal_rbi_2 %></td>
+<td align="right" ><%= @balance_sheet.cash_bal_rbi_3 %></td>
+<td align="right" ><%= @balance_sheet.cash_bal_rbi_4 %></td>
+
+	</tr>
+			<tr height="22px">
+
+<td colspan="1" >Balance with Banks, Money at Call</td>
+<td align="right" ><%= @balance_sheet.bal_bank_mny_cal_0 %></td>
+<td align="right" ><%= @balance_sheet.bal_bank_mny_cal_1 %></td>
+<td align="right" ><%= @balance_sheet.bal_bank_mny_cal_2 %></td>
+<td align="right" ><%= @balance_sheet.bal_bank_mny_cal_3 %></td>
+<td align="right" ><%= @balance_sheet.bal_bank_mny_cal_4 %></td>
+
+	</tr>
+			<tr height="22px">
+
+<td colspan="1" >Advances</td>
+<td align="right" ><%= @balance_sheet.advances_0 %></td>
+<td align="right" ><%= @balance_sheet.advances_1 %></td>
+<td align="right" ><%= @balance_sheet.advances_2 %></td>
+<td align="right" ><%= @balance_sheet.advances_3 %></td>
+<td align="right" ><%= @balance_sheet.advances_4 %></td>
+
+	</tr>
+			<tr height="22px">
+
+<td colspan="1" >Investments</td>
+<td align="right" ><%= @balance_sheet.invstmnts_0 %></td>
+<td align="right" ><%= @balance_sheet.invstmnts_1 %></td>
+<td align="right" ><%= @balance_sheet.invstmnts_2 %></td>
+<td align="right" ><%= @balance_sheet.invstmnts_3 %></td>
+<td align="right" ><%= @balance_sheet.invstmnts_4 %></td>
+
+	</tr>
+			<tr height="22px">
+
+<td colspan="1" >Gross Block</td>
+<td align="right" ><%= @balance_sheet.gros_block_0 %></td>
+<td align="right" ><%= @balance_sheet.gros_block_1 %></td>
+<td align="right" ><%= @balance_sheet.gros_block_2 %></td>
+<td align="right" ><%= @balance_sheet.gros_block_3 %></td>
+<td align="right" ><%= @balance_sheet.gros_block_4 %></td>
+
+	</tr>
+			<tr height="22px">
+
+<td colspan="1" >Revaluation Reserves</td>
+<td align="right" ><%= @balance_sheet.reval_reserves_0 %></td>
+<td align="right" ><%= @balance_sheet.reval_reserves_1 %></td>
+<td align="right" ><%= @balance_sheet.reval_reserves_2 %></td>
+<td align="right" ><%= @balance_sheet.reval_reserves_3 %></td>
+<td align="right" ><%= @balance_sheet.reval_reserves_4 %></td>
+
+	</tr>
+			<tr height="22px">
+
+<td colspan="1" >Accumulated Depreciation</td>
+<td align="right" ><%= @balance_sheet.accum_deprectn_0 %></td>
+<td align="right" ><%= @balance_sheet.accum_deprectn_1 %></td>
+<td align="right" ><%= @balance_sheet.accum_deprectn_2 %></td>
+<td align="right" ><%= @balance_sheet.accum_deprectn_3 %></td>
+<td align="right" ><%= @balance_sheet.accum_deprectn_4 %></td>
+
+	</tr>
+			<tr height="22px">
+
+<td colspan="1" >Net Block </td>
+<td align="right" ><%= @balance_sheet.net_block_0 %></td>
+<td align="right" ><%= @balance_sheet.net_block_1 %></td>
+<td align="right" ><%= @balance_sheet.net_block_2 %></td>
+<td align="right" ><%= @balance_sheet.net_block_3 %></td>
+<td align="right" ><%= @balance_sheet.net_block_4 %></td>
+
+	</tr>
+			<tr height="22px">
+
+<td colspan="1" >Capital Work In Progress </td>
+<td align="right" ><%= @balance_sheet.cap_wip_0 %></td>
+<td align="right" ><%= @balance_sheet.cap_wip_1 %></td>
+<td align="right" ><%= @balance_sheet.cap_wip_2 %></td>
+<td align="right" ><%= @balance_sheet.cap_wip_3 %></td>
+<td align="right" ><%= @balance_sheet.cap_wip_4 %></td>
+
+	</tr>
+			<tr height="22px">
+
+<td colspan="1" >Other Assets </td>
+<td align="right" ><%= @balance_sheet.other_assets_0 %></td>
+<td align="right" ><%= @balance_sheet.other_assets_1 %></td>
+<td align="right" ><%= @balance_sheet.other_assets_2 %></td>
+<td align="right" ><%= @balance_sheet.other_assets_3 %></td>
+<td align="right" ><%= @balance_sheet.other_assets_4 %></td>
+
+	</tr>
+			<tr height="22px">
+
+<td colspan="1" >Minority Interest</td>
+<td align="right" ><%= @balance_sheet.minort_interest_assets_0 %></td>
+<td align="right" ><%= @balance_sheet.minort_interest_assets_1 %></td>
+<td align="right" ><%= @balance_sheet.minort_interest_assets_2 %></td>
+<td align="right" ><%= @balance_sheet.minort_interest_assets_3 %></td>
+<td align="right" ><%= @balance_sheet.minort_interest_assets_4 %></td>
+
+	</tr>
+			<tr height="22px">
+
+<td colspan="1" >Group Share in Joint Venture</td>
+<td align="right" ><%= @balance_sheet.grp_shr_jnt_vntr_assets_0 %></td>	
+<td align="right" ><%= @balance_sheet.grp_shr_jnt_vntr_assets_1 %></td>	
+<td align="right" ><%= @balance_sheet.grp_shr_jnt_vntr_assets_2 %></td>	
+<td align="right" ><%= @balance_sheet.grp_shr_jnt_vntr_assets_3 %></td>	
+<td align="right" ><%= @balance_sheet.grp_shr_jnt_vntr_assets_4 %></td>	
+
+	</tr>
+			<tr height="22px">
+
+<td colspan="1" >Total Assets </td>
+<td align="right" ><%= @balance_sheet.tot_assets_0 %></td>
+<td align="right" ><%= @balance_sheet.tot_assets_1 %></td>
+<td align="right" ><%= @balance_sheet.tot_assets_2 %></td>
+<td align="right" ><%= @balance_sheet.tot_assets_3 %></td>
+<td align="right" ><%= @balance_sheet.tot_assets_4 %></td>
+
+	</tr>
+			<tr height="22px">
+
+<td colspan="1" >Contingent Liabilities </td>
+<td align="right" ><%= @balance_sheet.contignt_liabs_0 %></td>
+<td align="right" ><%= @balance_sheet.contignt_liabs_1 %></td>
+<td align="right" ><%= @balance_sheet.contignt_liabs_2 %></td>
+<td align="right" ><%= @balance_sheet.contignt_liabs_3 %></td>
+<td align="right" ><%= @balance_sheet.contignt_liabs_4 %></td>
+
+	</tr>
+			<tr height="22px">
+
+<td colspan="1" >Bills for collection </td>
+<td align="right" ><%= @balance_sheet.bills_fr_collect_0 %></td>
+<td align="right" ><%= @balance_sheet.bills_fr_collect_0 %></td>	
+<td align="right" ><%= @balance_sheet.bills_fr_collect_0 %></td>
+<td align="right" ><%= @balance_sheet.bills_fr_collect_0 %></td>
+<td align="right" ><%= @balance_sheet.bills_fr_collect_0 %></td>
+
+	</tr>
+			<tr height="22px">
+
+<td colspan="1" >Book Value (Rs)</td>
+<td align="right" ><%= @balance_sheet.bk_val_0 %></td>
+<td align="right" ><%= @balance_sheet.bk_val_1 %></td>
+<td align="right" ><%= @balance_sheet.bk_val_2 %></td>
+<td align="right" ><%= @balance_sheet.bk_val_3 %></td>
+<td align="right" ><%= @balance_sheet.bk_val_4 %></td>
+
+	</tr>
+
