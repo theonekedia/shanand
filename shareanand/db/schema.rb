@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150719174046) do
+ActiveRecord::Schema.define(version: 20150720304218) do
 
   create_table "balance_sheets", force: :cascade do |t|
     t.string   "industry"
@@ -874,6 +874,53 @@ ActiveRecord::Schema.define(version: 20150719174046) do
 
   add_index "ratios_and_analyses", ["nse_script_name"], name: "index_ratios_and_analyses_on_nse_script_name"
 
+  create_table "risk_and_returns", force: :cascade do |t|
+    t.string   "industry"
+    t.string   "isi_num",                                                null: false
+    t.string   "nse_script_name",                                        null: false
+    t.string   "industry_index"
+    t.decimal  "one_yr_mean",                   precision: 10, scale: 2
+    t.decimal  "six_months_mean",               precision: 10, scale: 2
+    t.decimal  "three_months_mean",             precision: 10, scale: 2
+    t.decimal  "one_month_mean",                precision: 10, scale: 2
+    t.decimal  "one_yr_sigma",                  precision: 10, scale: 2
+    t.decimal  "six_months_sigma",              precision: 10, scale: 2
+    t.decimal  "three_months_sigma",            precision: 10, scale: 2
+    t.decimal  "one_month_sigma",               precision: 10, scale: 2
+    t.decimal  "z_1_yr",                        precision: 4,  scale: 2
+    t.decimal  "z_6_months",                    precision: 4,  scale: 2
+    t.decimal  "z_3_months",                    precision: 4,  scale: 2
+    t.decimal  "z_1_months",                    precision: 4,  scale: 2
+    t.decimal  "beta_nse_1_yr",                 precision: 5,  scale: 3
+    t.decimal  "beta_nse_6_months",             precision: 5,  scale: 3
+    t.decimal  "beta_nse_3_months",             precision: 5,  scale: 3
+    t.decimal  "beta_nse_1_months",             precision: 5,  scale: 3
+    t.decimal  "beta_index_1_yr",               precision: 5,  scale: 3
+    t.decimal  "beta_index_6_months",           precision: 5,  scale: 3
+    t.decimal  "beta_index_3_months",           precision: 5,  scale: 3
+    t.decimal  "beta_index_1_months",           precision: 5,  scale: 3
+    t.decimal  "one_yr_high",                   precision: 10, scale: 2
+    t.decimal  "six_months_high",               precision: 10, scale: 2
+    t.decimal  "three_months_high",             precision: 10, scale: 2
+    t.decimal  "one_month_high",                precision: 10, scale: 2
+    t.decimal  "one_yr_low",                    precision: 10, scale: 2
+    t.decimal  "six_months_low",                precision: 10, scale: 2
+    t.decimal  "three_months_low",              precision: 10, scale: 2
+    t.decimal  "one_month_low",                 precision: 10, scale: 2
+    t.decimal  "probablty_grtr_x_one_yr",       precision: 10, scale: 2
+    t.decimal  "probablty_grtr_x_six_months",   precision: 10, scale: 2
+    t.decimal  "probablty_grtr_x_three_months", precision: 10, scale: 2
+    t.decimal  "probablty_grtr_x_one_month",    precision: 10, scale: 2
+    t.decimal  "co_var_one_yr",                 precision: 10, scale: 2
+    t.decimal  "co_var_six_months",             precision: 10, scale: 2
+    t.decimal  "co_var_three_months",           precision: 10, scale: 2
+    t.decimal  "co_var_one_month",              precision: 10, scale: 2
+    t.datetime "created_at",                                             null: false
+    t.datetime "updated_at",                                             null: false
+  end
+
+  add_index "risk_and_returns", ["nse_script_name"], name: "risk_and_returns_on_nse_script_name", unique: true
+
   create_table "script_meta_data", force: :cascade do |t|
     t.string   "isi_num",                                       null: false
     t.integer  "bse_script_numb",                               null: false
@@ -946,5 +993,12 @@ ActiveRecord::Schema.define(version: 20150719174046) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "z_tables", force: :cascade do |t|
+    t.decimal "z_value", precision: 4, scale: 2
+    t.decimal "area",    precision: 6, scale: 5
+  end
+
+  add_index "z_tables", ["z_value"], name: "z_tables_on_z_value", unique: true
 
 end

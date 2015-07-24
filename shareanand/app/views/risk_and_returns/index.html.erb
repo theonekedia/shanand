@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Risk And Returns</h1>
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th> Company </th>
+      <th> 1 yr mean</th>
+      <th> 1 yr sigma</th>
+      <th> 1 yr Z </th>
+      <th> 1 yr High</th>
+      <th> 1 yr Low</th>
+      <th> 1 yr Coefficient of Variance</th>
+      <th> 1 yr Probability to go higher</th>
+      <th> 3 Months mean</th>
+      <th> 3 Months sigma</th>
+      <th> 3 Months Z </th>
+      <th> 3 Months High</th>
+      <th> 3 Months Low</th>
+      <th> 3 Months Coefficient of Variance</th>
+      <th> 3 Months Probability to go higher</th>
+      
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @risk_and_returns.each do |risk_and_return| %>
+      <tr>
+        <td><%= risk_and_return.nse_script_name %></td>
+        <td><%= risk_and_return.one_yr_mean %></td>
+        <td><%= risk_and_return.one_yr_sigma %></td>
+        <td><%= risk_and_return.z_1_yr %></td>
+        <td><%= risk_and_return.one_yr_high %></td>
+        <td><%= risk_and_return.one_yr_low %></td>
+        <td><%= risk_and_return.co_var_one_yr %></td>
+        <td><%= risk_and_return.probablty_grtr_x_one_yr %></td>
+
+        <td><%= risk_and_return.three_months_mean %></td>
+        <td><%= risk_and_return.three_months_sigma %></td>
+        <td><%= risk_and_return.z_3_months %></td>
+        <td><%= risk_and_return.three_months_high %></td>
+        <td><%= risk_and_return.three_months_low %></td>
+        <td><%= risk_and_return.co_var_three_months %></td>
+        <td><%= risk_and_return.probablty_grtr_x_three_months %></td>
+       
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Risk and return', new_risk_and_return_path %>

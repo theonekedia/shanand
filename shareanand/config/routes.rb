@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :risk_and_returns
+
   resources :industry_details
 
   root to: 'ratios_and_analyses#home'  

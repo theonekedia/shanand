@@ -25,6 +25,7 @@ gem 'will_paginate'
 gem "googlecharts", :require => "gchart"
 gem "google_visualr"
 gem 'zip'
+gem 'descriptive_statistics'
 
 
 # Use Uglifier as compressor for JavaScript assets
