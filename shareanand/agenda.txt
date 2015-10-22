@@ -3,6 +3,17 @@ do U know what analysis you have to do based on financial information?
 If yes, we are here to fasten your analysis. But we hardly educate you on how to do the analysis.
 
 
+Create DB level model view:
+1. company name
+2. few day trading details
+3. Few balance sheet details
+4. few profit and loss details
+5. risk and return details ?
+	what shall I include ? moving averages, 
+
+
+
+
 We started with the 
 
 Our services.

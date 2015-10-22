@@ -26,6 +26,7 @@ gem "googlecharts", :require => "gchart"
 gem "google_visualr"
 gem 'zip'
 gem 'descriptive_statistics'
+gem 'thin'
 
 
 # Use Uglifier as compressor for JavaScript assets

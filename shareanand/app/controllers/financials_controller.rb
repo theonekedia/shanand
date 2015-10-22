@@ -55,6 +55,10 @@ class FinancialsController < ApplicationController
     	end
 	end
 
+def nodebt
+   #@ratios_and_analyses = RatiosAndAnalysis.where(:industry => @comp_industry)
+   #@balance_sheet = BalanceSheet.where(:tot_debt_0 = 0)
+end
 
 
 

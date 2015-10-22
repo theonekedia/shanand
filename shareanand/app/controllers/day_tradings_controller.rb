@@ -5,7 +5,7 @@ class DayTradingsController < ApplicationController
   # GET /day_tradings
   # GET /day_tradings.json
   def index
-    @day_tradings = DayTrading.order(sort_column + " " + sort_direction).paginate(page: params[:page], per_page: 30)
+    @day_tradings = DayTrading.order("market_cap DESC").order(sort_column + " " + sort_direction)#.paginate(page: params[:page], per_page: 30)
   end
 
   # GET /day_tradings/1

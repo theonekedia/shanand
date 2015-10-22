@@ -5,7 +5,15 @@ class RatiosAndAnalysesController < ApplicationController
   # GET /ratios_and_analyses
   # GET /ratios_and_analyses.json
   def index
-    @ratios_and_analyses = RatiosAndAnalysis.order(sort_column + " " + sort_direction).paginate(page: params[:page], per_page: 30)
+ #   @ratios_and_analyses = RatiosAndAnalysis.order(sort_column + " " + sort_direction).paginate(page: params[:page], per_page: 30)
+  all_rows = RatiosAndAnalysis.all
+  @ratios_and_analyses =[]
+  all_rows.each do |r|
+    if (r.net_proft_margn_0 > r.net_proft_margn_1) && (r.net_proft_margn_1 > r.net_proft_margn_2)# && (r.net_proft_margn_2 > r.net_proft_margn_3) && (r.net_proft_margn_3 > r.net_proft_margn_4) then
+      @ratios_and_analyses << r
+    end
+  end   
+
   end
 
   # GET /ratios_and_analyses/1

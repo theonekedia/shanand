@@ -31,9 +31,9 @@
       	<td><%= day_trading.today_low %></td>
       	<td><%= day_trading.today_close %></td>
       	<td><%= day_trading.pre_day_close %></td>
-        <td><%= day_trading.graham_fvp %></td>
+        <td><%= (day_trading.graham_fvp).round(2) %></td>
         <td><%= day_trading.eps %></td>
-        <td><%= day_trading.pe_ratio %></td>
+        <td><%= day_trading.pe_ratio.nil? ? nil : day_trading.pe_ratio.round(2) %></td>
         
         <td><%= day_trading.perc_change.round(2) %></td>
       	<% if day_trading.today_close < day_trading.today_open %>

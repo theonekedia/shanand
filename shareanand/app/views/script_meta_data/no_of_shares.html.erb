@@ -1,0 +1,4 @@
+	<%=form_for(@script_meta_datum) do |f| %>
+		<%= f.label :number_of_shares, raw("Number Of Shares")%>
+		<%= f.text_field :number_of_shares %>
+	<%= f.submit "update", class: "btn btn-default btn-primary" %>	

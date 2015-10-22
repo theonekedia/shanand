@@ -4,7 +4,8 @@ class BalanceSheetsController < ApplicationController
   # GET /balance_sheets
   # GET /balance_sheets.json
   def index
-    @balance_sheets = BalanceSheet.all
+    @balance_sheets = BalanceSheet.all.where(:tot_debt_0 => 0)
+
   end
 
   # GET /balance_sheets/1

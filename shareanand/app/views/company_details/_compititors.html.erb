@@ -1,4 +1,4 @@
-<h3> Compititors </h3>
+  <h3> Compititors </h3>
 
 <table class="table table-striped table-bordered">
   <thead>
@@ -13,6 +13,7 @@
       <th> EPS </th>
       <th> % Chg </th>
       <th> Proximity (%) </th>
+      <th> Market Cap (Cr)</th>
 
     </tr>
   </thead>
@@ -20,9 +21,8 @@
   <tbody>
     <% @compititors.each do |compititor| %>
       <tr>
-		
-		<td><%= compititor.nse_script_name %></td>
-    <td><%= compititor.f2_week_low.round(2) %></td>
+		<td><%= link_to compititor.nse_script_name, company_details_path(compititor.nse_script_name) %></td>
+		<td><%= compititor.f2_week_low.round(2) %></td>
     <td><%= compititor.book_value %></td>
     <td><%= compititor.graham_fvp.round(2) %></td>
     <td><%= compititor.today_close %></td>
@@ -31,7 +31,7 @@
     <td><%= compititor.eps %></td>  
     <td><%= compititor.perc_change.round(2) %></td>  
     <td><%= ((compititor.today_close - compititor.f2_week_low) / (compititor.f2_week_high - compititor.f2_week_low)).round(2) %></td>  
-
+    <td><%= (compititor.market_cap / 100).round(2) %></td>  
 
       </tr>
     <% end %>

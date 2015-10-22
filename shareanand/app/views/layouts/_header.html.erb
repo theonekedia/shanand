@@ -1,4 +1,6 @@
 <header>
+
+
 	<nav class="navbar navbar-default" role="navigation">	
 <div class="navbar-header">
 	<div class="navbar-logo">
@@ -8,7 +10,7 @@
 <%= link_to "ShareAnand", root_path %>
 	</div>
 	<ul class="nav navbar-nav navbar-right">
-		<li><%= link_to "Today's Trading Details and Pivot Table", day_tradings_path %></li>
+		<li><%= link_to "Today's Trading", day_tradings_path %></li>
 		<li><%= link_to "Ratio Analysis", ratios_and_analyses_path %></li>
 		<li><%= link_to "Articles", '#' %></li>
 		<li><%= link_to "Economic Calender", '#' %></li>
@@ -27,8 +29,53 @@
 	<% else %>
 		<li><%= link_to "Sign in", new_user_session_path %></li>
 		<li><%= link_to "Register", user_session_path %></li>
+		<li>
+			<%#= form_tag({cotroller: "script_meta_data", action: "search"},method:"get") do %>
+
+			<%#= form_for(:company_list) do |f|%>
+
+<%#= javascript_tag do %>
+
+<script>
+/*
+$(document).ready(function(){
+	$.getJSON('/app/views/layouts/list.json', function(json){
+alert(json);
+});
+
+$('#search').autocomplete({
+  source: list
+});
+alert(list.length)
+
+});
+*/
+</script>
+<%# end %>
+			
+			<%#= form_tag(search_path, method: "get") do %>
+				<p>
+				<%#= text_field_tag(:search, params[:search]) %>
+				<%#= image_submit_tag("/search.png") %>
+					</p>
+			<%# end %>
+			
+		</li>	
+		<!--li>
+		<div>
+		<form name="topsearch" id="topsearch" method="get" onsubmit="javascript:return search_post();" action="">
+		<input name="search_str" id="search_str" autocomplete="off" onkeyup="getAutosuggesion();" type="text" value="Search" onblur="if(this.value==&#39;&#39;)this.value=&#39;Search Quotes, News, NAVs...&#39;;" onfocus="if(this.value==&#39;Search Quotes, News, NAVs...&#39;)this.value=&#39;&#39;;if(this.value==&#39;Search Quotes, News, NAVs...&#39;)this.value=&#39;&#39;;" class="txtsrchbox">	
+		</div>	
+			
+				
+				<a href="javascript:;" onclick="$(&#39;#topsearch&#39;).submit()" style="float:left;" class="btn_search"></a>	 
+				<div class="CL"></div>
+				</form>				
+		</li-->
 	<% end %>
 	</ul>
+
+	
 </div>
 </nav>
 

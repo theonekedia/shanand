@@ -1,0 +1,8 @@
+
+
+<%= form_for edit_financial_path do |f| %>
+  <li><%= check_box_tag 'publish', 0, :onclick => 'this.form.submit()', :checked => (params[:catalog_image] == 1)%>
+  <%= f.label :publish?, "Are you sure Company has published the current year financials details " %> </li>
+  <li><%= check_box_tag 'sa_format', 0, :onclick => 'this.form.submit()', :checked => (params[:catalog_image] == 1)%>
+  <%= f.label :sa_format?, "Do you have updated values for the current year as per the shareanand Format ?" %> </li>
+<% end %>

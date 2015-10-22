@@ -1,0 +1,73 @@
+<p id="notice"><%= notice %></p>
+
+<h3>Risk And Returns </h3>
+
+<table class="table table-striped table-bordered">
+<tbody><tr>
+<th><i></i></th>
+<th>One Year</th>
+<th>6 Months</th>
+<th>3 Months</th>
+<th>1 Month</th>
+</tr>
+
+
+<tr>
+<th>Mean </th>
+<td align="center"> <%= @risk_and_return.one_yr_mean %> </td>
+<td align="center"> <%= @risk_and_return.six_months_mean %> </td>
+<td align="center"> <%= @risk_and_return.three_months_mean %> </td>
+<td align="center"> <%= @risk_and_return.one_month_mean %> </td>
+</tr>
+<tr>
+
+
+<tr>
+<th>Standard Deviation </th>
+<td align="center"> <%= @risk_and_return.one_yr_sigma %> </td>
+<td align="center"> <%= @risk_and_return.six_months_sigma %> </td>
+<td align="center"> <%= @risk_and_return.three_months_sigma %> </td>
+<td align="center"> <%= @risk_and_return.one_month_sigma %> </td>
+</tr>
+
+<tr>
+<th> Proximity from Mean </th>
+<td align="center"> <%= @risk_and_return.z_1_yr %> </td>
+<td align="center"> <%= @risk_and_return.z_6_months %> </td>
+<td align="center"> <%= @risk_and_return.z_3_months %> </td>
+<td align="center"> <%= @risk_and_return.z_1_months %> </td>
+</tr>
+
+<tr>
+<th> High </th>
+<td align="center"> <%= @risk_and_return.one_yr_high %> </td>
+<td align="center"> <%= @risk_and_return.six_months_high %> </td>
+<td align="center"> <%= @risk_and_return.three_months_high %> </td>
+<td align="center"> <%= @risk_and_return.one_month_high %> </td>
+</tr>
+
+<tr>
+<th> Low </th>
+<td align="center"> <%= @risk_and_return.one_yr_low %> </td>
+<td align="center"> <%= @risk_and_return.six_months_low %> </td>
+<td align="center"> <%= @risk_and_return.three_months_low %> </td>
+<td align="center"> <%= @risk_and_return.one_month_low %> </td>
+</tr>
+
+<tr>
+<th> Coefficient of Variation </th>
+<td align="center"> <%= @risk_and_return.co_var_one_yr %> </td>
+<td align="center"> <%= @risk_and_return.co_var_six_months %> </td>
+<td align="center"> <%= @risk_and_return.co_var_three_months %> </td>
+<td align="center"> <%= @risk_and_return.co_var_one_month %> </td>
+</tr>
+
+<tr>
+<th> Probability <span class="span_probab">(To go higher, wrt to one year duration) </span> </th>
+<td align="center"> <%= @risk_and_return.probablty_grtr_x_one_yr * 100 %> </td>
+<td align="center"> <%= @risk_and_return.probablty_grtr_x_six_months * 100 %> </td>
+<td align="center"> <%= @risk_and_return.probablty_grtr_x_three_months * 100 %> </td>
+<td align="center"> <%= @risk_and_return.probablty_grtr_x_one_month * 100 %> </td>
+</tr>
+
+</tbody></table>

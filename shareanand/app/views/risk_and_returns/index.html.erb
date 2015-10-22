@@ -34,16 +34,17 @@
         <td><%= risk_and_return.one_yr_high %></td>
         <td><%= risk_and_return.one_yr_low %></td>
         <td><%= risk_and_return.co_var_one_yr %></td>
-        <td><%= risk_and_return.probablty_grtr_x_one_yr %></td>
-
+        <td><%= risk_and_return.probablty_grtr_x_one_yr.nil? ? nil : risk_and_return.probablty_grtr_x_one_yr* 100 %></td>
+        
         <td><%= risk_and_return.three_months_mean %></td>
         <td><%= risk_and_return.three_months_sigma %></td>
         <td><%= risk_and_return.z_3_months %></td>
         <td><%= risk_and_return.three_months_high %></td>
         <td><%= risk_and_return.three_months_low %></td>
         <td><%= risk_and_return.co_var_three_months %></td>
-        <td><%= risk_and_return.probablty_grtr_x_three_months %></td>
+        <td><%= risk_and_return.probablty_grtr_x_three_months.nil? ? nil : risk_and_return.probablty_grtr_x_three_months* 100 %></td>
        
+
       </tr>
     <% end %>
   </tbody>

@@ -5,9 +5,10 @@ class CompanyDetailsController < ApplicationController
 def show
 	@day_trading = DayTrading.find_by_nse_script_name(params[:nse_script_name])
 	@comp_industry=DayTrading.where(:nse_script_name => params[:nse_script_name]).pluck(:industry)
-    @compititors= DayTrading.where(:industry => @comp_industry)
+    @compititors= DayTrading.where(:industry => @comp_industry).order("market_cap DESC")
     @ratios_and_analyses = RatiosAndAnalysis.where(:industry => @comp_industry)
-
+    @risk_and_return = RiskAndReturn.find_by_nse_script_name(params[:nse_script_name])
+    @ratios = RatiosAndAnalysis.find_by_nse_script_name(params[:nse_script_name])
 
     #@script_meta_datum = ScriptMetaDatum.find_by_nse_script_name(params[:nse_script_name])
 	#@ratios_and_analyses = RatiosAndAnalysis.find_by_nse_script_name(params[:nse_script_name])
@@ -29,6 +30,11 @@ def update_bonus_share
     # any decrease in the share price
     # need to create a table and form for update  bonus ratio    
 end
+
+def search
+    @company_list= ScriptMetaDatum.search(params[:search])
+    #uniq.pluck(:nse_script_name)
+  end
 
 def update_split
     # how about having the same table for bonus, split, yearly_dividend

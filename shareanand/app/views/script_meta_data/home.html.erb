@@ -1,0 +1,329 @@
+<p>
+	Let us help you doing your home work before you invest in share market. We provide the details of Fundamental analysis such as Ratios, P/E, EPS, Graham Value, comparision with Peers, risk associated with security,..
+
+1. losers
+2. Gainers
+3. market value > 10000 crs
+4. 
+
+
+</p>
+<input class="losers" rel="status" type="checkbox" value="Discontinued"> Losers
+<br/>
+<input class="gainers" rel="status" type="checkbox" value="Shipping">Gainers
+<br/>
+<input class="prod_capacity" rel="capacity" type="checkbox" value="1GB">1GB
+<br/>
+<input class="prod_capacity" rel="capacity" type="checkbox" value="2GB">2GB
+<br/>
+<input class="prod_capacity" rel="capacity" type="checkbox" value="4GB">4GB
+<br/>
+<input class="prod_speed" rel="speed" type="checkbox" value="1000MHz">1000MHz
+<br/>
+<input class="prod_speed" rel="speed" type="checkbox" value="1333MHz">1333MHz
+<br/>
+<br />
+<br />
+<table class="someclass" border="0" cellpadding="0" cellspacing="0" summary="bla">
+    <caption>bla bla</caption>
+    <thead>
+        <tr id="ProductID" class="first">
+            <th>Product Number</th>
+            <th>Status</th>
+            <th>Capacity</th>
+            <th>Speed</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr id="Memory1" class="part_detail">
+            <td class="name">Memory1</td>
+            <td class="status" rel="Shipping">Shipping</td>
+            <td class="capacity" rel="1GB">1GB</td>
+            <td class="speed" rel="1333MHz">1333MHz</td>
+        </tr>
+        <tr id="Memory2" class="part_detail">
+            <td class="name">Memory2</td>
+            <td class="status" rel="Discontinued">Discontinued</td>
+            <td class="capacity" rel="Shipping">2GB</td>
+            <td class="speed" rel="1000MHz">1000MHz</td>
+        </tr>
+        <tr id="Memory3" class="part_detail">
+            <td class="name">Memory3</td>
+            <td class="status" rel="Shipping">Shipping</td>
+            <td class="capacity" rel="2GB">2GB</td>
+            <td class="speed" rel="1333MHz">1333MHz</td>
+        </tr>
+        <tr id="Memory4" class="part_detail">
+            <td class="name">Memory4</td>
+            <td class="status" rel="Discontinued">Discontinued</td>
+            <td class="capacity" rel="4GB">4GB</td>
+            <td class="speed" rel="1000MHz">1000MHz</td>
+        </tr>
+        <tr id="Memory5" class="part_detail">
+            <td class="name">Memory5</td>
+            <td class="status" rel="Shipping">Shipping</td>
+            <td class="capacity" rel="4GB">4GB</td>
+            <td class="speed" rel="1333MHz">1333MHz</td>
+        </tr>
+    </tbody>
+
+
+<script type="text/javascript">
+$("input:checkbox").click(function () {
+    var showAll = true;
+    $('tr').not('.first').hide();
+    $('input[type=checkbox]').each(function () {
+        if ($(this)[0].checked) {
+            showAll = false;
+            var status = $(this).attr('rel');
+            var value = $(this).val();            
+            $('td.' + status + '[rel="' + value + '"]').parent('tr').show();
+        }
+    });
+    if(showAll){
+        $('tr').show();
+    }
+});
+</script>
+
+<style media="screen" type="text/css">
+
+body { font-family:'Arial'; color:#646464; }        
+.filtering-wrap { float:left; width:20%; margin:0 5% 0 0; padding:0; position:relative;}    
+
+</style>
+
+<script>
+    $(document).ready(function() {
+
+var byFilter1 = [], byFilter2 = [], byFilter3 = [], byFilter4 = [], byFilter5 = [];
+
+$("input[name=fl-1]").on( "change", function() {
+    if (this.checked) byFilter1.push("[data-category~='" + $(this).attr("value") + "']");
+    else removeA(byFilter1, "[data-category~='" + $(this).attr("value") + "']");
+});
+
+$("input[name=fl-2]").on( "change", function() {
+    if (this.checked) byFilter2.push("[data-category~='" + $(this).attr("value") + "']");
+    else removeA(byFilter2, "[data-category~='" + $(this).attr("value") + "']");
+});
+
+$("input[name=fl-3]").on( "change", function() {
+    if (this.checked) byFilter3.push("[data-category~='" + $(this).attr("value") + "']");
+    else removeA(byFilter3, "[data-category~='" + $(this).attr("value") + "']");
+});
+
+$("input[name=fl-4]").on( "change", function() {
+    if (this.checked) byFilter4.push("[data-category~='" + $(this).attr("value") + "']");
+    else removeA(byFilter4, "[data-category~='" + $(this).attr("value") + "']");
+});
+
+$("input[name=fl-5]").on( "change", function() {
+    if (this.checked) byFilter5.push("[data-category~='" + $(this).attr("value") + "']");
+    else removeA(byFilter5, "[data-category~='" + $(this).attr("value") + "']");
+});
+
+$("input").on( "change", function() {
+    var str = "Include items \n";
+    var selector = '', cselector = '', nselector = '';
+
+    var $lis = $('.results > div'),
+        $checked = $('input:checked');  
+
+    if ($checked.length) {  
+
+        if (byFilter1.length) {        
+            if (str == "Include items \n") {
+                str += "    " + "with (" +  byFilter1.join(',') + ")\n";               
+                $($('input[name=fl-1]:checked')).each(function(index, byFilter1){
+                    if(selector === '') {
+                        selector += "[data-category~='" + byFilter1.id + "']";                     
+                    } else {
+                        selector += ",[data-category~='" + byFilter1.id + "']";    
+                    }                
+                });                 
+            } else {
+                str += "    AND " + "with (" +  byFilter1.join(' OR ') + ")\n";                
+                $($('input[name=fl-2]:checked')).each(function(index, byFilter1){
+                    selector += "[data-category~='" + byFilter1.id + "']";
+                });
+            }                           
+        }
+
+        if (byFilter2.length) {                       
+            if (str == "Include items \n") {
+                str += "    " + "with (" +  byFilter2.join(' OR ') + ")\n";                   
+                $($('input[name=fl-2]:checked')).each(function(index, byFilter2){
+                    if(selector === '') {
+                        selector += "[data-category~='" + byFilter2.id + "']";                    
+                    } else {
+                        selector += ",[data-category~='" + byFilter2.id + "']";   
+                    }                
+                });                 
+            } else {
+                str += "    AND " + "with (" +  byFilter2.join(' OR ') + ")\n";               
+                $($('input[name=fl-2]:checked')).each(function(index, byFilter2){
+                    if(cselector === '') {
+                        cselector += "[data-category~='" + byFilter2.id + "']";                   
+                    } else {
+                        cselector += ",[data-category~='" + byFilter2.id + "']";  
+                    }                   
+                });
+            }           
+        }
+
+        if (byFilter3.length) {            
+            if (str == "Include items \n") {
+                str += "    " + "with (" +  byFilter3.join(' OR ') + ")\n";                
+                $($('input[name=fl-3]:checked')).each(function(index, byFilter3){
+                    if(selector === '') {
+                        selector += "[data-category~='" + byFilter3.id + "']";                     
+                    } else {
+                        selector += ",[data-category~='" + byFilter3.id + "']";    
+                    }                
+                });             
+            } else {
+                str += "    AND " + "with (" +  byFilter3.join(' OR ') + ")\n";                
+                $($('input[name=fl-3]:checked')).each(function(index, byFilter3){
+                    if(nselector === '') {
+                        nselector += "[data-category~='" + byFilter3.id + "']";                    
+                    } else {
+                        nselector += ",[data-category~='" + byFilter3.id + "']";   
+                    }   
+                });
+            }            
+        }
+
+        $lis.hide(); 
+        console.log(selector);
+        console.log(cselector);
+        console.log(nselector);
+
+        if (cselector === '' && nselector === '') {         
+            $('.results > div').filter(selector).show();
+        } else if (cselector === '') {
+            $('.results > div').filter(selector).filter(nselector).show();
+        } else if (nselector === '') {
+            $('.results > div').filter(selector).filter(cselector).show();
+        } else {
+            $('.results > div').filter(selector).filter(cselector).filter(nselector).show();
+        }
+
+    } else {
+        $lis.show();
+    }   
+
+    $("#result").html(str); 
+
+});
+
+function removeA(arr) {
+    var what, a = arguments, L = a.length, ax;
+    while (L > 1 && arr.length) {
+        what = a[--L];
+        while ((ax= arr.indexOf(what)) !== -1) {
+            arr.splice(ax, 1);
+        }
+    }
+    return arr;
+}
+
+});
+
+var $results=$('.result'),
+    $checks=$(':checkbox[name^=fl]');
+
+$checks.change(function(){
+    var $checked=$checks.filter(':checked');
+    /* show all when nothing checked*/
+    if(!$checked.length){
+        $results.show();
+        return; /* quit here if nothing checked */
+    }
+    /* create array of checked values */
+    var checkedVals= $.map($checked, function(el){
+        return el.value
+    });
+    /* hide all results, then filter for matches */
+    $results.hide().filter(function(){
+        /* split categories for this result into an array*/
+        var cats=$(this).data('category').split(' ');
+        /* filter the checkedVals array to only values that match */
+        var checkMatches=$.grep(checkedVals, function(val){              
+            return $.inArray(val, cats) >-1;
+        });
+        /* only return elements with matched array and original array being same length */             
+        return checkMatches.length === checkedVals.length;
+     /* show results that match all the checked checkboxes */            
+    }).show();
+    /* do something when there aren't any matches */
+    if(!$results.length){
+       alert('Ooops...no matches');
+    }
+
+
+});
+        </script>
+
+
+        <div class="filtering-wrap">
+
+
+            <p style="font-size:12px;"><strong>Filter 1</strong></p>
+            <form>
+                <label style="font-size:12px;"><input type="checkbox" name="fl-1" value="check1" id="check1" /> Check1</label><br>
+                <label style="font-size:12px;"><input type="checkbox" name="fl-1" value="check2" id="check2" /> Check2</label><br> 
+                <label style="font-size:12px;"><input type="checkbox" name="fl-1" value="check3" id="check3" /> Check3</label><br>                     
+
+            </form>
+            <p style="font-size:12px;"><strong>Filter 2</strong></p>
+            <form>
+                <label style="font-size:12px;"><input type="checkbox" name="fl-2" value="check4" id="check4" /> Check4</label><br>
+                <label style="font-size:12px;"><input type="checkbox" name="fl-2" value="check5" id="check5" /> Check5</label><br>
+                <label style="font-size:12px;"><input type="checkbox" name="fl-2" value="check6" id="check6" /> Check6</label><br>                  
+                <label style="font-size:12px;"><input type="checkbox" name="fl-2" value="check7" id="check7" /> Check7</label><br>
+                <label style="font-size:12px;"><input type="checkbox" name="fl-2" value="check8" id="check8" /> Check8</label><br>
+                <label style="font-size:12px;"><input type="checkbox" name="fl-2" value="check9" id="check9" /> Check9</label>
+            </form>                
+
+            <p style="font-size:12px;"><strong>Filter 3</strong></p>
+            <form>
+                <label style="font-size:12px;"><input type="checkbox" name="fl-3" value="check10" id="check10" /> Check10</label><br>
+                <label style="font-size:12px;"><input type="checkbox" name="fl-3" value="check11" id="check11" /> Check11</label><br>
+                <label style="font-size:12px;"><input type="checkbox" name="fl-3" value="check12" id="check12" /> Check12</label>                
+            </form>                
+
+            <p style="font-size:12px;"><strong>Filter 4</strong></p>
+            <form>
+                <label style="font-size:12px;"><input type="checkbox" name="fl-4" value="check13" id="check13" /> Check13</label><br>
+                <label style="font-size:12px;"><input type="checkbox" name="fl-4" value="check14" id="check14" /> Check14</label><br>
+                <label style="font-size:12px;"><input type="checkbox" name="fl-4" value="check15" id="check15" /> Check15</label><br>
+                <label style="font-size:12px;"><input type="checkbox" name="fl-4" value="check16" id="check16" /> Check16</label><br>
+                <label style="font-size:12px;"><input type="checkbox" name="fl-4" value="check17" id="check17" /> Check17</label>
+            </form> 
+
+
+            <p style="font-size:12px;"><strong>Filter 5</strong></p>
+            <form>
+                <label style="font-size:12px;"><input type="checkbox" name="fl-5" value="check18" id="check18" /> Check18</label><br>
+                <label style="font-size:12px;"><input type="checkbox" name="fl-5" value="check19" id="check19" /> Check19</label><br>
+                <label style="font-size:12px;"><input type="checkbox" name="fl-5" value="check20" id="check20" /> Check20</label>
+        </div>
+
+        <div class="results">
+            <div class="result" data-id="result1" data-category="check1 check2 check3 check4 check5 check6 check7 check8 check9 check10">Result1</div>
+            <div class="result" data-id="result2" data-category="check1 check3 check5 check7 check9 check11 check13 check15 check17 check19">Result2</div>
+            <div class="result" data-id="result3" data-category="check2 check4 check6 check8 check10 check12 check14 check16 check18 check20">Result3</div>
+            <div class="result" data-id="result4" data-category="check5 check6 check7 check8 check9 check10">Result4</div>  
+            <div class="result" data-id="result5" data-category="check15">Result5</div>  
+            <div class="result" data-id="result6" data-category="check3 check13 check20">Result6</div>  
+            <div class="result" data-id="result7" data-category="check11 check12 check13 check14 check15 check16">Result7</div>  
+            <div class="result" data-id="result8" data-category="check4 check8 check12 check16 check20">Result8</div> 
+            <div class="result" data-id="result9" data-category="check2 check3 check5 check7 check11 check13 check17 check19">Result9</div> 
+            <div class="result" data-id="result10" data-category="check3 check6 check9 check12 check15 check18">Result10</div> 
+            <div class="result" data-id="result11" data-category="check5 check10 check15 check20">Result11</div>  
+            <div class="result" data-id="result12" data-category="check6 check12 check18">Result12</div>  
+            <div class="result" data-id="result13" data-category="check7 check14">Result13</div>  
+            <div class="result" data-id="result14" data-category="check8 check16">Result14</div>    
+        </div>
+        </div>
